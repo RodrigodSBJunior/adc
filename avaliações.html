@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações</title>
+    <link rel="stylesheet" href="avaliações.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="estrelas.css">
+</head>
+<body>
+   <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h1>Avaliações</h1>
+        
+        <!-- Seção para adicionar nova avaliação -->
+        <section class="nova-avaliacao">
+            <h2>Deixe sua avaliação</h2>
+            <form id="form-avaliacao">
+                <div class="rating-container">
+                    <div class="stars">
+                        <span class="star" data-value="1"></span>
+                        <span class="star" data-value="2"></span>
+                        <span class="star" data-value="3"></span>
+                        <span class="star" data-value="4"></span>
+                        <span class="star" data-value="5"></span>
+                    </div>
+                    <span class="rating-text">Selecione uma nota</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario">Seu comentário:</label>
+                    <textarea id="comentario" rows="4" placeholder="Compartilhe sua experiência..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Avaliação</button>
+            </form>
+        </section>
+        
+        <!-- Seção de avaliações existentes -->
+        <section class="avaliacoes-existentes">
+            <h2>O que nossos pacientes dizem</h2>
+            
+            <div class="avaliacoes-container">
+                <!-- Avaliação 1 -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">MS</div>
+                            <div class="usuario-nome">Maria Silva</div>
+                        </div>
+                        <div class="avaliacao-data">15/05/2023</div>
+                    </div>
+                    <div class="avaliacao-stars">
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                    </div>
+                    <div class="avaliacao-texto">
+                        <p>Excelente atendimento! A Dra. Mayra é muito atenciosa e profissional. Me senti muito acolhida durante toda a consulta. Recomendo fortemente!</p>
+                    </div>
+                </div>
+                
+                <!-- Avaliação 2 -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">JS</div>
+                            <div class="usuario-nome">João Santos</div>
+                        </div>
+                        <div class="avaliacao-data">03/04/2023</div>
+                    </div>
+                    <div class="avaliacao-stars">
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class=""></i>
+                    </div>
+                    <div class="avaliacao-texto">
+                        <p>Muito bom atendimento, ambiente agradável e acolhedor. A psicóloga é muito competente e me ajudou bastante com minhas questões.</p>
+                    </div>
+                </div>
+                
+                <!-- Avaliação 3 -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">AP</div>
+                            <div class="usuario-nome">Ana Paula</div>
+                        </div>
+                        <div class="avaliacao-data">22/03/2023</div>
+                    </div>
+                    <div class="avaliacao-stars">
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                        <i class="filled"></i>
+                    </div>
+                    <div class="avaliacao-texto">
+                        <p>Estou muito satisfeita com o tratamento. A clínica é muito bem organizada, o agendamento é prático e a Dra. Mayra é extremamente profissional e acolhedora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="avaliacoes.js"></script>
+</body>
+</html>

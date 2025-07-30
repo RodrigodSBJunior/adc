@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+    <link rel="stylesheet" href="notificações.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+ <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h1>Notificações</h1>
+        
+        <div class="notificacoes-filtro">
+            <div class="filtro-opcoes">
+                <button class="ativo">Todas</button>
+                <button>Não lidas</button>
+                <button>Importantes</button>
+            </div>
+            <button class="marcar-todas">Marcar todas como lidas</button>
+        </div>
+        
+        <div class="notificacoes-container">
+            <!-- Notificação 1 - Não lida e importante -->
+            <div class="notificacao-item nao-lida">
+                <div class="notificacao-icone importante">
+                    <i class="icon-bell"></i>
+                </div>
+                <div class="notificacao-conteudo">
+                    <div class="notificacao-titulo">Lembrete de Consulta</div>
+                    <div class="notificacao-mensagem">
+                        Você tem uma consulta marcada com a Dra. Mayra Santos amanhã às 14:00. Não se esqueça de comparecer ou avisar com antecedência caso precise remarcar.
+                    </div>
+                    <div class="notificacao-data">Hoje, 10:30</div>
+                    <div class="notificacao-acoes">
+                        <button class="marcar-lida">Marcar como lida</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notificação 2 - Não lida -->
+            <div class="notificacao-item nao-lida">
+                <div class="notificacao-icone">
+                    <i class="icon-calendar"></i>
+                </div>
+                <div class="notificacao-conteudo">
+                    <div class="notificacao-titulo">Consulta Confirmada</div>
+                    <div class="notificacao-mensagem">
+                        Sua consulta para o dia 22/06/2023 às 10:00 foi confirmada. Agradecemos a preferência.
+                    </div>
+                    <div class="notificacao-data">Ontem, 15:45</div>
+                    <div class="notificacao-acoes">
+                        <button class="marcar-lida">Marcar como lida</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notificação 3 - Lida -->
+            <div class="notificacao-item">
+                <div class="notificacao-icone lembrete">
+                    <i class="icon-info"></i>
+                </div>
+                <div class="notificacao-conteudo">
+                    <div class="notificacao-titulo">Avaliação de Atendimento</div>
+                    <div class="notificacao-mensagem">
+                        Como foi sua última consulta? Gostaríamos de saber sua opinião. Clique aqui para avaliar o atendimento recebido.
+                    </div>
+                    <div class="notificacao-data">15/05/2023, 09:20</div>
+                    <div class="notificacao-acoes">
+                        <button>Ver detalhes</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notificação 4 - Lida -->
+            <div class="notificacao-item">
+                <div class="notificacao-icone">
+                    <i class="icon-check"></i>
+                </div>
+                <div class="notificacao-conteudo">
+                    <div class="notificacao-titulo">Pagamento Confirmado</div>
+                    <div class="notificacao-mensagem">
+                        Recebemos seu pagamento referente à consulta do dia 28/04/2023. Obrigado!
+                    </div>
+                    <div class="notificacao-data">28/04/2023, 16:10</div>
+                    <div class="notificacao-acoes">
+                        <button>Ver recibo</button>
+                        <button class="excluir">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="notificacoes.js"></script>
+</body>
+</html>

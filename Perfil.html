@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Paciente</title>
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+  <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h1>Meu Perfil</h1>
+        
+        <div class="perfil-container">
+            <div class="perfil-header">
+                <div class="perfil-foto">
+                    <div class="foto-placeholder">
+                        <span>JS</span>
+                    </div>
+                    <button class="btn-alterar-foto">Alterar foto</button>
+                </div>
+                <div class="perfil-nome">
+                    <h2>João Silva</h2>
+                    <p>Paciente desde: Janeiro 2023</p>
+                </div>
+            </div>
+            
+            <div class="perfil-tabs">
+                <button class="tab-button active" data-tab="dados-pessoais">Dados Pessoais</button>
+                <button class="tab-button" data-tab="dados-medicos">Dados Médicos</button>
+                <button class="tab-button" data-tab="seguranca">Segurança</button>
+            </div>
+            
+            <div class="tab-content active" id="dados-pessoais">
+                <form id="form-dados-pessoais">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" value="João Silva" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="data-nascimento">Data de Nascimento</label>
+                            <input type="date" id="data-nascimento" value="1990-05-15" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" id="cpf" value="123.456.789-00" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="rg">RG</label>
+                            <input type="text" id="rg" value="12.345.678-9" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" value="joao.silva@email.com" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" value="(11) 98765-4321" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco" value="Rua das Flores, 123 - Apto 45" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" value="São Paulo" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" value="SP" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" value="01234-567" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="btn-editar-pessoais" class="btn-editar">Editar Informações</button>
+                        <button type="submit" id="btn-salvar-pessoais" class="btn-salvar" style="display: none;">Salvar Alterações</button>
+                        <button type="button" id="btn-cancelar-pessoais" class="btn-cancelar" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="dados-medicos">
+                <form id="form-dados-medicos">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="convenio">Convênio</label>
+                            <input type="text" id="convenio" value="Unimed" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero-carteirinha">Número da Carteirinha</label>
+                            <input type="text" id="numero-carteirinha" value="123456789" disabled>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="alergias">Alergias</label>
+                            <textarea id="alergias" disabled>Penicilina, Dipirona</textarea>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="medicamentos">Medicamentos em uso</label>
+                            <textarea id="medicamentos" disabled>Fluoxetina 20mg (1x ao dia)</textarea>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="observacoes">Observações médicas</label>
+                            <textarea id="observacoes" disabled>Histórico de ansiedade e insônia.</textarea>
+                            <i class="icon-pencil edit-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="btn-editar-medicos" class="btn-editar">Editar Informações</button>
+                        <button type="submit" id="btn-salvar-medicos" class="btn-salvar" style="display: none;">Salvar Alterações</button>
+                        <button type="button" id="btn-cancelar-medicos" class="btn-cancelar" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="seguranca">
+                <form id="form-seguranca">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="senha-atual">Senha Atual</label>
+                            <input type="password" id="senha-atual">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nova-senha">Nova Senha</label>
+                            <input type="password" id="nova-senha">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmar-senha">Confirmar Nova Senha</label>
+                            <input type="password" id="confirmar-senha">
+                        </div>
+                    </div>
+                    
+                    <div class="senha-requisitos">
+                        <p>A senha deve conter:</p>
+                        <ul>
+                            <li>Pelo menos 8 caracteres</li>
+                            <li>Pelo menos uma letra maiúscula</li>
+                            <li>Pelo menos um número</li>
+                            <li>Pelo menos um caractere especial</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-salvar">Alterar Senha</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="perfil.js"></script>
+</body>
+</html>

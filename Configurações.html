@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="configurações.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+  <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h1>Configurações</h1>
+        <div class="configuracoes-container">
+            <!-- Configurações de Notificações -->
+            <section class="config-section">
+                <div class="config-header">
+                    <i class="icon-bell"></i>
+                    <h2>Notificações</h2>
+                </div>
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Notificações por E-mail</h3>
+                            <p>Receba lembretes de consultas e atualizações por e-mail</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Notificações por SMS</h3>
+                            <p>Receba lembretes de consultas por mensagem de texto</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Notificações Push</h3>
+                            <p>Receba notificações no navegador ou aplicativo</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Configurações de Privacidade -->
+            <section class="config-section">
+                <div class="config-header">
+                    <i class="icon-lock"></i>
+                    <h2>Privacidade</h2>
+                </div>
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Compartilhar Dados Médicos</h3>
+                            <p>Permitir que seus dados médicos sejam compartilhados com outros profissionais da clínica</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Histórico de Consultas</h3>
+                            <p>Permitir que seu histórico de consultas seja acessado por outros profissionais da clínica</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Análise de Dados Anônimos</h3>
+                            <p>Permitir que seus dados anônimos sejam usados para melhorar nossos serviços</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Configurações de Aparência -->
+            <section class="config-section">
+                <div class="config-header">
+                    <i class="icon-eye"></i>
+                    <h2>Aparência</h2>
+                </div>
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Tema</h3>
+                            <p>Escolha entre tema claro ou escuro</p>
+                        </div>
+                        <div class="theme-selector">
+                            <button class="theme-button active" data-theme="light">Claro</button>
+                            <button class="theme-button" data-theme="dark">Escuro</button>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Tamanho da Fonte</h3>
+                            <p>Ajuste o tamanho do texto para melhor leitura</p>
+                        </div>
+                        <div class="font-size-selector">
+                            <button class="font-size-button" data-size="small">A</button>
+                            <button class="font-size-button active" data-size="medium">A</button>
+                            <button class="font-size-button" data-size="large">A</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Configurações de Conta -->
+            <section class="config-section">
+                <div class="config-header">
+                    <i class="icon-user"></i>
+                    <h2>Conta</h2>
+                </div>
+                <div class="config-content">
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Idioma</h3>
+                            <p>Selecione o idioma de preferência</p>
+                        </div>
+                        <select class="config-select">
+                            <option value="pt-br" selected>Português (Brasil)</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-item-text">
+                            <h3>Excluir Conta</h3>
+                            <p>Remover permanentemente sua conta e todos os dados associados</p>
+                        </div>
+                        <button class="btn-danger">Excluir Conta</button>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="config-actions">
+                <button class="btn-salvar">Salvar Alterações</button>
+                <button class="btn-cancelar">Restaurar Padrões</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="configuracoes.js"></script>
+</body>
+</html>

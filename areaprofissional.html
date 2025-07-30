@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Profissional</title>
+    <link rel="stylesheet" href="areaprofissional.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="#agenda"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="#pacientes"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="#avaliacoes"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="welcome-section">
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <img src="psicologa.png" alt="Dra. Mayra Santos">
+                </div>
+                <div class="profile-info">
+                    <h1 style="font-size: 20px;">Área do Profissional</h1>
+                    <h1>Bem-vinda, Dra. Mayra Santos</h1>
+                    <p>CRM: 385097-M | Último acesso: Hoje, 08:45</p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- Informações rápidas -->
+        <div class="info-cards-container">
+            <div class="info-card">
+                <span class="info-title">Consultas hoje</span>
+                <span class="info-value" id="consultas-hoje">4</span>
+            </div>
+            <div class="info-card">
+                <span class="info-title">Total de pacientes</span>
+                <span class="info-value" id="total-pacientes">18</span>
+            </div>
+        </div>
+
+        <br><br>
+        <!-- Cards de serviços -->
+       <main style="padding-bottom: 250px;">
+     
+    
+    <div style="height: 100px;"></div>
+
+
+    
+    <!-- Cards de serviços -->
+    <div class="cards-container" style="position: static; margin-bottom: 200px;">
+      <div class="card">
+        <div class="card-icon"><i class="icon-calendar-plus"></i></div>
+        <h3>Minhas consulta</h3>
+        <p>Visualize e gerencie suas consultas.</p>
+        <a href="consultasprofi.html" class="card-button">ver</a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon"><i class="icon-whatsapp"></i></div>
+        <h3>Criar agenda</h3>
+        <p>Crie sua agenda de forma prática e personalizada.</p>
+        <a href="criarconsultas.html" class="card-button">Conversar</a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon"><i class="icon-calendar"></i></div>
+        <h3>Meus pacientes</h3>
+        <p>Visualize seus pacientes.</p>
+        <a href="mypacientes.html" class="card-button">Ver</a>
+      </div>
+
+       <div class="card">
+        <div class="card-icon"><i class="icon-whatsapp"></i></div>
+        <h3>Ver avaliações</h3>
+        <p>Visualize as avalações que seus paciente dão.</p>
+        <a href="veravaliacoes.html" class="card-button">Ver</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape" style="position: relative; z-index: 0;">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100" style="width: 100px;">
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 ADC Psicologia</p>
+        <p>ITB Brasilio Flores (Belval)</p>
+        <p>Todos os direitos reservados</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>

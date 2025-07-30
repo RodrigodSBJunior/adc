@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    width: 100%;
+background-color: rgb(255, 255, 255);
+position: fixed;
+padding: 40px 0;
+}
+
+#menu{
+    background-color: rgb(255, 255, 255);
+width: 80%;
+margin: auto;
+}
+
+header #menu{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+header .logo img{
+    max-width: 60px;
+}
+
+header .componentes nav ul{
+list-style-type: none;
+}
+
+header .componentes nav ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header .componentes nav ul li{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header .componentes nav a{
+color: black;
+/*font-family: ;*/
+font-size: 20px;
+text-decoration: none;
+}
+
+header .componentes nav a:hover{
+    tranform: scale(1.05);
+}
+
+header .botentrar button{
+    width: 120px;
+    height: 40px;
+    border: 1px solid rgb(255, 255, 255);
+border-radius: 10px;
+font-size: 18px;
+background-color:rgb(31, 31, 177);
+border:1px solid rgb(255, 255, 255);
+color:rgb(255, 255, 255);
+cursor: pointer;
+transition: .5s;
+border-radius: 10px;
+}
+
+header .botentrar button:hover{
+    border: 1px solid blue;
+background-color: white;
+color:blue;
+}
+
+
+
+
+section.hero-site{
+
+    margin: auto;
+    width: 90%;
+    height: 95vh;
+    background-color: rgb(255, 255, 255);
+    /* background-image: url(); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    padding-top: 80px;
+}
+
+.hero-site .inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-site .txt-hero h1{
+    font-size: 3em;
+    line-height: 50px;
+    font-weight: 200;
+  
+}
+
+.hero-site .txt-hero h1 span{
+display: block;
+font-weight: 800;
+}
+
+.hero-site .txt-hero p{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 2px 0;
+}
+
+.hero-site .txt-hero p span{
+    display: block;
+
+}
+
+.hero-site button{
+    width:250px;
+    height: 60px;
+    font-size: 20px;
+    background-color:rgb(31, 31, 177);
+    border:1px solid rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 40px;
+}
+
+.hero-site button:hover{
+    border: black;
+    background-color: rgb(183, 168, 0);
+    color: rgb(31, 31, 177);
+}
+
+#letra {
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 250px;
+}
+
+.card{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 30px;
+    padding: 40px 0;
+}
+
+.atendimento{
+display: flex;
+}
+.hero-site .txt-hero h1{
+    text-align: left;
+    font-size: 39px;
+}
+
+.steps-container + br + br + br + h1{
+    text-align: center;
+    font-size: 39px;
+}
+
+.clinica h1{
+    text-align: center;
+    font-size: 39px;
+}
+
+#profissionais{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profissionais img{
+    max-width: 60px;
+    height: auto;
+}
+
+#profissionais p{
+    font-size: 24px;
+}
+
+#atendimento{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#atendimento img{
+    max-width: 60px;
+    height: auto;
+}
+
+#atendimento p{
+    font-size: 24px;
+}
+
+#humanizado{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#humanizado img{
+    max-width: 60px;
+    height: auto;
+}
+
+#humanizado p{
+    font-size: 24px;
+}
+
+
+
+.cor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cor{
+    width: 90px;
+    height: 90px;
+    background-color: rgb(0, 0, 148);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cor p{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+#one, #two, #three, #four{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#one p:last-child, #two p:last-child, #three p:last-child, #four p:last-child{
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 900px; /* mesma largura que a .card */
+    margin: 40px auto;
+    gap: 40px;
+}
+
+.clinica{
+    width: 100%;
+   height: 260px;
+    background-color: rgb(107, 58, 27);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.clinica .quadrado{
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.clinica .quadrado img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    object-position: center bottom;
+}
+
+.clinica{
+    position: relative;
+}
+
+.clinica h1{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.info-clinica{
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.info-clinica p{
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.perfil{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    position: relative;
+}
+
+.preto{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.info-perfil{
+    text-align: left;
+}
+
+.perfil h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.perfil h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.perfil p{
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+#perfil-container{
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    justify-content: center;
+    height: 100%;
+}
+
+section .perfil{
+
+}
+
+ .preto{
+    background-color: black;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preto img{
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    object-fit: cover;
+}
+
+.rodape{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.rodape p{
+    font-size: 16px;
+    margin: 0;
+}
+
+body  h1{
+    text-align: center;
+}
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Paciente</title>
+  <link rel="stylesheet" href="areapaciente.css">
+  <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+  <!-- Menu Hambúrguer -->
+  <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+    <div class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="menu-text">Menu</span>
+  </div>
+
+  <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+  <!-- Conteúdo principal da página -->
+  <main style="padding-bottom: 250px;">
+    <div class="text-center">
+      <h1>Área do Paciente</h1>
+      <p>Bem-vindo à sua área de paciente. Utilize o menu para navegar.</p>
+    </div>
+    
+    <div style="height: 100px;"></div>
+
+
+    
+    <!-- Cards de serviços -->
+    <div class="cards-container" style="position: static; margin-bottom: 200px;">
+      <div class="card">
+        <div class="card-icon"><i class="icon-calendar-plus"></i></div>
+        <h3>Agendar Consulta</h3>
+        <p>Marque consultas com os especialistas disponíveis.</p>
+        <a href="consulta.html" class="card-button">Agendar</a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon"><i class="icon-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Fale diretamente com um profissional via WhatsApp.</p>
+        <a href="https://wa.me/5500000000000" class="card-button">Conversar</a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon"><i class="icon-calendar"></i></div>
+        <h3>Minhas Consultas</h3>
+        <p>Visualize seu histórico e futuras consultas.</p>
+        <a href="myconsultas.html" class="card-button">Ver</a>
+      </div>
+
+        <div class="card">
+        <div class="card-icon"><i class="icon-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Fale diretamente com um profissional via WhatsApp.</p>
+        <a href="https://wa.me/5500000000000" class="card-button">Conversar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape" style="position: relative; z-index: 0;">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100" style="width: 100px;">
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 ADC Psicologia</p>
+        <p>ITB Brasilio Flores (Belval)</p>
+        <p>Todos os direitos reservados</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>

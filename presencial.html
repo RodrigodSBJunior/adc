@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Presencial</title>
+    <link rel="stylesheet" href="presencial.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+  <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="text-center">
+            <div id="cor">Consulta Presencial<br><span style="font-size: 1.1rem; font-weight: normal; display: block; margin-top: 5px;">Agende sua consulta presencial</span></div>
+        </div>
+
+        <!-- Informações da psicóloga -->
+        <section id="profissional" class="perfil-psicologa">
+            <!-- Título removido -->
+            <div class="perfil-container">
+                <div style="width: 100%; position: absolute; text-align: center; top: 2px;">
+                    <h5 style="color: #0066cc; font-size: 1rem; font-weight: normal; margin: 0;">Nossa Profissional</h5>
+                </div>
+                <div style="display: flex; align-items: center; margin-left: 40px;">
+                    <div class="perfil-foto">
+                        <img src="psicologa.png" alt="Dra. Mayra Santos">
+                    </div>
+                    <div class="perfil-info-right">
+                        <h3>Dra. Mayra Santos</h3>
+                        <h4>CRM: 385097-M</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Informações da clínica -->
+        <section class="clinica-info">
+            <!-- Título removido -->
+            <div class="clinica-container">
+                <div class="clinica-foto">
+                    <img src="clinica.png" alt="Clínica ADC Psicologia">
+                </div>
+                <div class="clinica-detalhes">
+                    <h3>Clínica ADC Psicologia</h3>
+                    <p>Rua das Acácias, 123 – Sala 45<br>
+                    Centro Comercial Alphaville<br>
+                    Barueri – SP</p>
+                    <p>CEP: 06455-010</p>
+                    <p>Telefone: (11) 91234-5678</p>
+                    <p>E-mail: contato@adcpsicologia.com</p>
+                    <p>Horário de atendimento: Segunda a Sexta, das 8h às 19h</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendário de Agendamento -->
+        <section class="calendario-section">
+            <h2>Selecione uma Data</h2>
+            <div class="calendario-container">
+                <div class="mes-selector">
+                    <button id="mes-anterior">&lt;</button>
+                    <span id="mes-atual">Junho 2023</span>
+                    <button id="mes-proximo">&gt;</button>
+                </div>
+                <div class="calendario" id="calendario"></div>
+            </div>
+            <div class="horarios-container" id="horarios-container">
+                <h3>Horários Disponíveis</h3>
+                <p class="data-selecionada" id="data-selecionada">Selecione uma data para ver os horários disponíveis</p>
+                <div class="horarios-grid" id="horarios-grid"></div>
+                <div class="botao-agendar-container">
+                    <button id="botao-agendar" class="botao-agendar" disabled>Agendar Consulta</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="calendario.js"></script>
+</body>
+</html>

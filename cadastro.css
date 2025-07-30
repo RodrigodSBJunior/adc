@@ -1,0 +1,240 @@
+img{
+   width: 80px;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+}
+
+.cadastro-container {
+   max-width: 800px;
+   margin: 60px auto 0 auto;
+   background: #fff;
+   border-radius: 16px;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+   padding: 40px 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+h1{
+   text-align: center;
+   margin-bottom: 80px;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   top: 150px;
+}
+
+.linha-vertical{
+   width: 2px;
+   height: 100vh;
+   background-color: black;
+   position: fixed;
+   left: 50%;
+   top: 0;
+   transform: translateX(-50%);
+}
+
+a{
+   display: block;
+   text-align: center;
+}
+
+.marcacao p:nth-child(3){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 200px;
+}
+
+.marcacao input:nth-child(4){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 230px;
+}
+
+.marcacao p:nth-child(7){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 300px;
+}
+
+.marcacao input:nth-child(8){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 340px;
+}
+
+.marcacao p:nth-child(1),
+.marcacao input:nth-child(2),
+.marcacao p:nth-child(5),
+.marcacao input:nth-child(6){
+   position: absolute;
+   left: calc(50% - 280px);
+}
+
+.marcacao p:nth-child(1){
+   top: 200px;
+}
+
+.marcacao input:nth-child(2){
+   top: 230px;
+}
+
+.marcacao p:nth-child(5){
+   top: 300px;
+}
+
+.marcacao input:nth-child(6){
+   top: 340px;
+}
+
+input{
+   width: 250px;
+   height: 35px;
+   border: solid 1 px black;
+   border-radius: 50px;
+}
+
+.marcacao p:nth-child(9),
+.marcacao input[type="date"] {
+   position: absolute;
+   left: calc(50% - 280px);
+   top: 400px;
+}
+
+.sexo-label {
+    position: absolute;
+    left: calc(50% - 20px);
+    top: 400px;
+}
+
+.marcacao select[name="sexo"] {
+   position: absolute;
+   left: calc(50% - 20px);
+   top: 430px;
+   width: 180px;
+   height: 35px;
+   border-radius: 50px;
+   border: 1px solid black;
+}
+
+.tel-label {
+   position: absolute;
+   left: calc(50% + 180px);
+   top: 400px;
+}
+
+.marcacao .telefone {
+   position: absolute;
+   left: calc(50% + 180px);
+   top: 430px;
+   width: 180px;
+   height: 35px;
+   border-radius: 50px;
+   border: 1px solid black;
+}
+
+/* Senha e Confirmar Senha - abaixo */
+.senha-label {
+   position: absolute;
+   left: calc(50% - 280px);
+   top: 500px;
+}
+
+.senha {
+   position: absolute;
+   left: calc(50% - 280px);
+   top: 530px;
+   width: 250px;
+   height: 35px;
+   border-radius: 50px;
+   border: 1px solid black;
+}
+
+.senha2-label {
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 500px;
+}
+
+.marcacao input[name="confirmar-senha"] {
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 530px;
+   width: 250px;
+   height: 35px;
+   border-radius: 50px;
+   border: 1px solid black;
+}
+
+.marcacao input:nth-child(10){
+   position: absolute;
+   left: calc(50% - 125px);
+   top: 430px;
+   width: 200px;
+}
+
+.marcacao p:nth-child(13){
+   position: absolute;
+   left: calc(50% - 280px);
+   top: 480px;
+}
+
+.marcacao input:nth-child(14){
+   position: absolute;
+   left: calc(50% - 280px);
+   top: 510px;
+}
+
+.marcacao p:nth-child(15){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 480px;
+}
+
+.marcacao input:nth-child(16){
+   position: absolute;
+   left: calc(50% + 20px);
+   top: 510px;
+}
+
+.marcacao p:nth-child(11){
+   position: absolute;
+   left: calc(50% - 125px);
+   top: 470px;
+}
+
+.marcacao select:nth-child(12){
+   position: absolute;
+   left: calc(50% - 125px);
+   top: 500px;
+   width: 250px;
+   height: 35px;
+   border: solid 1px black;
+   border-radius: 50px;
+}
+.botao-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.botao-cadastrar {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cadastrar:hover {
+    background-color: #0055aa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

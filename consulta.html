@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta</title>
+    <link rel="stylesheet" href="areapaciente.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+  <!-- Menu de Navegação -->
+  <nav class="nav-menu" aria-hidden="true">
+    <div class="menu-header">Menu do Paciente</div>
+    <ul>
+      <li><a href="areapaciente.html"><i class="icon-home"></i>Início</a></li>
+      <li><a href="consulta.html"><i class="icon-calendar-plus"></i>Agendar Consulta</a></li>
+      <li><a href="myconsultas.html"><i class="icon-calendar"></i>Minhas Consultas</a></li>
+      <li><a href="notificação.html"><i class="icon-bell"></i>Notificações</a></li>
+      <li><a href="avaliações.html"><i class="icon-star"></i>Avaliações</a></li>
+      <li><a href="Perfil.html"><i class="icon-user"></i>Perfil</a></li>
+      <li><a href="Configurações.html"><i class="icon-cog"></i>Configurações</a></li>
+      <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay para fechar o menu ao clicar fora -->
+  <div class="overlay"></div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+    <!-- Conteúdo principal -->
+    <main>
+        <div class="text-center">
+            <h1>ADC Psicologia</h1>
+            <p>Agende sua consulta de forma rápida e segura</p>
+        </div>
+
+        <!-- Tipo de consulta -->
+        <div class="tipo-consulta">
+            <h2>Escolha o tipo de consulta</h2>
+            <div class="tipo-opcoes">
+                <div class="tipo-card" id="presencial">
+                    <div class="tipo-icon"><i class="icon-calendar"></i></div>
+                    <h3>Consulta Presencial</h3>
+                    <p>Atendimento na clínica com hora marcada</p>
+                    <a href="presencial.html" class="tipo-button">Agendar</a>
+                </div>
+                
+                <div class="tipo-card" id="online">
+                    <div class="tipo-icon"><i class="icon-chat"></i></div>
+                    <h3>Consulta Online</h3>
+                    <p>Atendimento por videochamada</p>
+                    <a href="online.html" class="tipo-button">Agendar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informações da psicóloga -->
+        <section class="perfil-psicologa">
+            <h2>Nossa Psicóloga</h2>
+            <div class="perfil-container">
+                <div class="perfil-foto">
+                    <img src="psicologa.png" alt="Dra. Mayra Santos">
+                </div>
+                <div class="perfil-info">
+                    <h3>Dra. Mayra Santos</h3>
+                    <h4>CRM: 385097-M</h4>
+                    <p>Contato: +55 (11) 99999-9999</p>
+                    <p>Meu trabalho é fundamentado no cuidado individualizado, respeitando os valores, crenças e a história única de cada paciente. Busco promover autoconhecimento, equilíbrio e transformação em cada processo terapêutico.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 ADC Psicologia - ITB brasilio flores (belval). Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="consulta.js"></script>
+</body>
+</html>

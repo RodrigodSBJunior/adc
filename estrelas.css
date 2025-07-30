@@ -1,0 +1,71 @@
+/* Estilos para as estrelas de avaliação */
+.stars {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.star:before {
+  content: '★';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.star:hover:before,
+.star.active:before {
+  color: #ffc107;
+}
+
+.avaliacao-stars {
+  margin-bottom: 15px;
+}
+
+.avaliacao-stars i {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  margin-right: 5px;
+}
+
+.avaliacao-stars i:before {
+  content: '★';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: #ddd;
+}
+
+.avaliacao-stars i.filled:before {
+  color: #ffc107;
+}
+
+/* Animação para as estrelas */
+@keyframes star-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.star.active:before {
+  animation: star-pulse 0.3s ease-in-out;
+}
