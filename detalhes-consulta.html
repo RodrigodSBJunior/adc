@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Consulta - ADC Psicologia</title>
+    <link rel="stylesheet" href="detalhes-consulta.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="voltar-btn">
+            <a href="consultasprofi.html" class="btn-voltar">← Voltar à Agenda</a>
+        </div>
+
+        <h1>Detalhes da Consulta</h1>
+        
+        <div class="consulta-detalhes">
+            <!-- Foto e dados do paciente -->
+            <div class="paciente-section">
+                <div class="paciente-foto">
+                    <img src="https://via.placeholder.com/150x150/0066cc/ffffff?text=JS" alt="João Silva" class="foto-perfil">
+                </div>
+                <div class="paciente-dados">
+                    <h2>João Silva</h2>
+                    <p><strong>Idade:</strong> 32 anos</p>
+                    <p><strong>Telefone:</strong> (11) 99999-1234</p>
+                    <p><strong>Email:</strong> joao.silva@email.com</p>
+                    <p><strong>Prontuário:</strong> P001</p>
+                    <p><strong>Data de Nascimento:</strong> 15/03/1992</p>
+                    <p><strong>Profissão:</strong> Engenheiro</p>
+                </div>
+            </div>
+
+            <!-- Informações da consulta -->
+            <div class="consulta-info-section">
+                <h3>Informações da Consulta</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Data:</strong> 15/06/2025
+                    </div>
+                    <div class="info-item">
+                        <strong>Horário:</strong> 09:00 - 10:00
+                    </div>
+                    <div class="info-item">
+                        <strong>Tipo:</strong> <span class="tipo-online">Online</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Status:</strong> <span class="status-agendado">Agendado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controle de presença -->
+            <div class="presenca-section">
+                <h3>Controle de Presença</h3>
+                <div class="presenca-buttons">
+                    <button class="btn-presente" onclick="marcarPresenca('presente')">
+                        <i class="icon-check"></i> Presente
+                    </button>
+                    <button class="btn-falta" onclick="marcarPresenca('falta')">
+                        <i class="icon-x"></i> Falta
+                    </button>
+                </div>
+                <div id="presenca-status" class="presenca-status"></div>
+            </div>
+
+            <!-- Ações -->
+            <div class="acoes-section">
+                <h3>Ações</h3>
+                <div class="acoes-buttons">
+                    <button class="btn-prontuario-detalhes">
+                        <i class="icon-file-text"></i> Ver Prontuário Completo
+                    </button>
+                    <button class="btn-historico">
+                        <i class="icon-history"></i> Histórico de Consultas
+                    </button>
+                    <button class="btn-anotacoes">
+                        <i class="icon-edit"></i> Adicionar Anotações
+                    </button>
+                </div>
+            </div>
+
+            <!-- Observações -->
+            <div class="observacoes-section">
+                <h3>Observações da Consulta</h3>
+                <textarea class="observacoes-textarea" placeholder="Digite suas observações sobre esta consulta..."></textarea>
+                <button class="btn-salvar-obs">Salvar Observações</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="detalhes-consulta.js"></script>
+</body>
+</html>

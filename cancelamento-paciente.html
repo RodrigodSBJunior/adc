@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar Consulta - ADC Psicologia</title>
+    <link rel="stylesheet" href="areaprofissional.css">
+    <link rel="stylesheet" href="icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .cancel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .cancel-header {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(239, 68, 68, 0.3);
+        }
+        
+        .cancel-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+        
+        .cancel-header p {
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .cancel-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .appointment-info {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ef4444;
+        }
+        
+        .appointment-info h3 {
+            margin: 0 0 15px 0;
+            color: #1e293b;
+            font-size: 18px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            color: #64748b;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #ef4444;
+            outline: none;
+        }
+        
+        .cancel-reasons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .reason-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .reason-option:hover {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .reason-option input[type="radio"] {
+            margin: 0;
+        }
+        
+        .reason-option.selected {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .policy-info {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .policy-info h4 {
+            margin: 0 0 10px 0;
+            color: #ea580c;
+            font-size: 16px;
+        }
+        
+        .policy-info ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #9a3412;
+        }
+        
+        .policy-info li {
+            margin: 5px 0;
+        }
+        
+        .buttons-section {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-cancel {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-cancel:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+        
+        .btn-back {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        
+        .btn-back:hover {
+            background: #e2e8f0;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #374151;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #1f2937;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .cancel-container {
+                padding: 20px;
+            }
+            
+            .cancel-reasons {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <a href="areapaciente.html" class="back-button">
+            <i class="icon-arrow-left"></i> Voltar
+        </a>
+        
+        <div class="cancel-header">
+            <h1>Cancelar Consulta</h1>
+            <p>Lamentamos que precise cancelar sua consulta</p>
+        </div>
+        
+        <div class="cancel-form">
+            <div class="appointment-info">
+                <h3>Informações da Consulta</h3>
+                <div class="info-row">
+                    <span class="info-label">Profissional:</span>
+                    <span class="info-value">Dra. Mayra Santos</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Data:</span>
+                    <span class="info-value">15 de Janeiro de 2025</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Horário:</span>
+                    <span class="info-value">14:00</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Tipo:</span>
+                    <span class="info-value">Consulta Psicológica</span>
+                </div>
+            </div>
+            
+            <div class="policy-info">
+                <h4>Política de Cancelamento</h4>
+                <ul>
+                    <li>Cancelamentos com mais de 24h de antecedência: sem cobrança</li>
+                    <li>Cancelamentos com menos de 24h: cobrança de 50% do valor</li>
+                    <li>Não comparecimento: cobrança integral</li>
+                    <li>Emergências médicas: isenção de cobrança (com comprovante)</li>
+                </ul>
+            </div>
+            
+            <div class="form-group">
+                <label>Motivo do Cancelamento *</label>
+                <div class="cancel-reasons">
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="emergencia" id="emergencia">
+                        <label for="emergencia">Emergência Médica</label>
+                    </div>
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="trabalho" id="trabalho">
+                        <label for="trabalho">Compromisso de Trabalho</label>
+                    </div>
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="pessoal" id="pessoal">
+                        <label for="pessoal">Motivo Pessoal</label>
+                    </div>
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="viagem" id="viagem">
+                        <label for="viagem">Viagem</label>
+                    </div>
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="saude" id="saude">
+                        <label for="saude">Problema de Saúde</label>
+                    </div>
+                    <div class="reason-option">
+                        <input type="radio" name="reason" value="outro" id="outro">
+                        <label for="outro">Outro</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="details">Detalhes Adicionais (Opcional)</label>
+                <textarea class="form-control" id="details" rows="4" placeholder="Descreva brevemente o motivo do cancelamento..."></textarea>
+            </div>
+            
+            <div class="buttons-section">
+                <button class="btn btn-back" onclick="history.back()">Manter Consulta</button>
+                <button class="btn btn-cancel" onclick="confirmCancel()">Confirmar Cancelamento</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar interatividade aos motivos
+        document.querySelectorAll('.reason-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.reason-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        function confirmCancel() {
+            const selectedReason = document.querySelector('input[name="reason"]:checked');
+            
+            if (!selectedReason) {
+                alert('Por favor, selecione um motivo para o cancelamento.');
+                return;
+            }
+            
+            if (confirm('Tem certeza que deseja cancelar esta consulta?')) {
+                // Aqui seria enviado para o servidor
+                alert('Consulta cancelada com sucesso! Você receberá um e-mail de confirmação.');
+                window.location.href = 'areapaciente.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário - ADC Psicologia</title>
+    <link rel="stylesheet" href="areaprofissional.css">
+    <link rel="stylesheet" href="icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .calendar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .calendar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-info h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        
+        .header-info p {
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .today-info {
+            text-align: right;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .calendar-main {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .mini-calendar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .mini-calendar h3 {
+            margin: 0 0 15px 0;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        
+        .mini-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .mini-nav button {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .mini-month {
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+        }
+        
+        .mini-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .mini-day:hover {
+            background: #f1f5f9;
+        }
+        
+        .mini-day.today {
+            background: #667eea;
+            color: white;
+        }
+        
+        .mini-day.has-event {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .appointments-today {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .appointments-today h3 {
+            margin: 0 0 15px 0;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        
+        .appointment-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .appointment-time {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 12px;
+            min-width: 50px;
+        }
+        
+        .appointment-patient {
+            flex: 1;
+            font-size: 14px;
+            color: #374151;
+        }
+        
+        .main-calendar {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .calendar-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .calendar-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #5a67d8;
+            transform: scale(1.1);
+        }
+        
+        .current-month {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        
+        .view-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+        
+        .view-btn.active {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .calendar-day-header {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .calendar-day {
+            background: white;
+            min-height: 120px;
+            padding: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .calendar-day:hover {
+            background: #f8fafc;
+        }
+        
+        .calendar-day.other-month {
+            background: #f8fafc;
+            color: #94a3b8;
+        }
+        
+        .calendar-day.today {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+        }
+        
+        .day-number {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .day-events {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .event {
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .event:hover {
+            background: #5a67d8;
+            transform: scale(1.02);
+        }
+        
+        .event.consultation {
+            background: #10b981;
+        }
+        
+        .event.break {
+            background: #f59e0b;
+        }
+        
+        .event.unavailable {
+            background: #ef4444;
+        }
+        
+        .add-event-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        }
+        
+        .add-event-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #374151;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #1f2937;
+            transform: translateY(-2px);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal h3 {
+            margin: 0 0 20px 0;
+            color: #1e293b;
+            font-size: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+        
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        @media (max-width: 1024px) {
+            .calendar-main {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+                flex-direction: row;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .calendar-container {
+                padding: 20px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .calendar-day {
+                min-height: 80px;
+                padding: 8px;
+            }
+            
+            .sidebar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="calendario.html"><i class="icon-calendar"></i>Calendário</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="#avaliacoes"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <main class="calendar-container">
+        <a href="areaprofissional.html" class="back-button">
+            <i class="icon-arrow-left"></i> Voltar ao Dashboard
+        </a>
+        
+        <!-- Header do Calendário -->
+        <div class="calendar-header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>Calendário de Consultas</h1>
+                    <p>Gerencie seus agendamentos e compromissos</p>
+                </div>
+                <div class="today-info">
+                    <div style="font-size: 18px; font-weight: 600;" id="todayDate"></div>
+                    <div style="font-size: 14px; opacity: 0.9;" id="todayAppointments">4 consultas hoje</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layout Principal -->
+        <div class="calendar-main">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Mini Calendário -->
+                <div class="mini-calendar">
+                    <h3>Navegação Rápida</h3>
+                    <div class="mini-nav">
+                        <button onclick="changeMiniMonth(-1)">‹</button>
+                        <div class="mini-month" id="miniMonth"></div>
+                        <button onclick="changeMiniMonth(1)">›</button>
+                    </div>
+                    <div class="mini-grid" id="miniGrid"></div>
+                </div>
+
+                <!-- Consultas de Hoje -->
+                <div class="appointments-today">
+                    <h3>Consultas de Hoje</h3>
+                    <div id="todayAppointmentsList">
+                        <div class="appointment-item">
+                            <div class="appointment-time">09:00</div>
+                            <div class="appointment-patient">Ana Silva</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-time">10:00</div>
+                            <div class="appointment-patient">Carlos Santos</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-time">14:00</div>
+                            <div class="appointment-patient">Maria Oliveira</div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="appointment-time">16:00</div>
+                            <div class="appointment-patient">João Pereira</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendário Principal -->
+            <div class="main-calendar">
+                <div class="calendar-controls">
+                    <div class="calendar-nav">
+                        <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
+                        <div class="current-month" id="currentMonth"></div>
+                        <button class="nav-btn" onclick="changeMonth(1)">›</button>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="month">Mês</button>
+                        <button class="view-btn" data-view="week">Semana</button>
+                        <button class="view-btn" data-view="day">Dia</button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendário será gerado aqui -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão Adicionar Evento -->
+        <button class="add-event-btn" onclick="openEventModal()">+</button>
+    </main>
+
+    <!-- Modal Adicionar Evento -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <h3>Adicionar Consulta</h3>
+            <div class="form-group">
+                <label>Paciente</label>
+                <input type="text" class="form-control" id="eventPatient" placeholder="Nome do paciente">
+            </div>
+            <div class="form-group">
+                <label>Data</label>
+                <input type="date" class="form-control" id="eventDate">
+            </div>
+            <div class="form-group">
+                <label>Horário</label>
+                <input type="time" class="form-control" id="eventTime">
+            </div>
+            <div class="form-group">
+                <label>Tipo</label>
+                <select class="form-control" id="eventType">
+                    <option value="consultation">Consulta</option>
+                    <option value="break">Pausa</option>
+                    <option value="unavailable">Indisponível</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Observações</label>
+                <textarea class="form-control" id="eventNotes" rows="3" placeholder="Observações adicionais"></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeEventModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="saveEvent()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script>
+        let currentDate = new Date();
+        let miniCurrentDate = new Date();
+        let events = [
+            { id: 1, date: '2025-01-15', time: '09:00', patient: 'Ana Silva', type: 'consultation' },
+            { id: 2, date: '2025-01-15', time: '10:00', patient: 'Carlos Santos', type: 'consultation' },
+            { id: 3, date: '2025-01-15', time: '14:00', patient: 'Maria Oliveira', type: 'consultation' },
+            { id: 4, date: '2025-01-15', time: '16:00', patient: 'João Pereira', type: 'consultation' },
+            { id: 5, date: '2025-01-16', time: '09:00', patient: 'Fernanda Costa', type: 'consultation' },
+            { id: 6, date: '2025-01-17', time: '12:00', patient: 'Almoço', type: 'break' }
+        ];
+
+        function generateCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            const monthElement = document.getElementById('currentMonth');
+            
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            monthElement.textContent = new Intl.DateTimeFormat('pt-BR', { 
+                month: 'long', 
+                year: 'numeric' 
+            }).format(currentDate);
+            
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            grid.innerHTML = '';
+            
+            // Cabeçalhos dos dias
+            const dayHeaders = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day-header';
+                header.textContent = day;
+                grid.appendChild(header);
+            });
+            
+            // Dias do calendário
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                
+                if (date.getMonth() !== month) {
+                    dayElement.classList.add('other-month');
+                }
+                
+                if (date.toDateString() === new Date().toDateString()) {
+                    dayElement.classList.add('today');
+                }
+                
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                dayNumber.textContent = date.getDate();
+                dayElement.appendChild(dayNumber);
+                
+                const dayEvents = document.createElement('div');
+                dayEvents.className = 'day-events';
+                
+                // Adicionar eventos do dia
+                const dateStr = date.toISOString().split('T')[0];
+                const dayEventsList = events.filter(event => event.date === dateStr);
+                
+                dayEventsList.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.className = `event ${event.type}`;
+                    eventElement.textContent = `${event.time} ${event.patient}`;
+                    eventElement.onclick = (e) => {
+                        e.stopPropagation();
+                        editEvent(event);
+                    };
+                    dayEvents.appendChild(eventElement);
+                });
+                
+                dayElement.appendChild(dayEvents);
+                dayElement.onclick = () => openEventModal(dateStr);
+                grid.appendChild(dayElement);
+            }
+        }
+
+        function generateMiniCalendar() {
+            const grid = document.getElementById('miniGrid');
+            const monthElement = document.getElementById('miniMonth');
+            
+            const year = miniCurrentDate.getFullYear();
+            const month = miniCurrentDate.getMonth();
+            
+            monthElement.textContent = new Intl.DateTimeFormat('pt-BR', { 
+                month: 'short', 
+                year: 'numeric' 
+            }).format(miniCurrentDate);
+            
+            const firstDay = new Date(year, month, 1);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            grid.innerHTML = '';
+            
+            // Cabeçalhos dos dias
+            const dayHeaders = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'mini-day';
+                header.textContent = day;
+                header.style.fontWeight = '600';
+                header.style.color = '#64748b';
+                grid.appendChild(header);
+            });
+            
+            // Dias do mini calendário
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'mini-day';
+                dayElement.textContent = date.getDate();
+                
+                if (date.toDateString() === new Date().toDateString()) {
+                    dayElement.classList.add('today');
+                }
+                
+                const dateStr = date.toISOString().split('T')[0];
+                if (events.some(event => event.date === dateStr)) {
+                    dayElement.classList.add('has-event');
+                }
+                
+                dayElement.onclick = () => {
+                    currentDate = new Date(date);
+                    generateCalendar();
+                };
+                
+                grid.appendChild(dayElement);
+            }
+        }
+
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            generateCalendar();
+        }
+
+        function changeMiniMonth(direction) {
+            miniCurrentDate.setMonth(miniCurrentDate.getMonth() + direction);
+            generateMiniCalendar();
+        }
+
+        function openEventModal(selectedDate = null) {
+            const modal = document.getElementById('eventModal');
+            if (selectedDate) {
+                document.getElementById('eventDate').value = selectedDate;
+            }
+            modal.style.display = 'block';
+        }
+
+        function closeEventModal() {
+            document.getElementById('eventModal').style.display = 'none';
+            clearEventForm();
+        }
+
+        function clearEventForm() {
+            document.getElementById('eventPatient').value = '';
+            document.getElementById('eventDate').value = '';
+            document.getElementById('eventTime').value = '';
+            document.getElementById('eventType').value = 'consultation';
+            document.getElementById('eventNotes').value = '';
+        }
+
+        function saveEvent() {
+            const patient = document.getElementById('eventPatient').value;
+            const date = document.getElementById('eventDate').value;
+            const time = document.getElementById('eventTime').value;
+            const type = document.getElementById('eventType').value;
+            const notes = document.getElementById('eventNotes').value;
+
+            if (!patient || !date || !time) {
+                alert('Preencha todos os campos obrigatórios');
+                return;
+            }
+
+            const newEvent = {
+                id: Date.now(),
+                date,
+                time,
+                patient,
+                type,
+                notes
+            };
+
+            events.push(newEvent);
+            generateCalendar();
+            generateMiniCalendar();
+            closeEventModal();
+        }
+
+        function editEvent(event) {
+            document.getElementById('eventPatient').value = event.patient;
+            document.getElementById('eventDate').value = event.date;
+            document.getElementById('eventTime').value = event.time;
+            document.getElementById('eventType').value = event.type;
+            document.getElementById('eventNotes').value = event.notes || '';
+            
+            openEventModal();
+        }
+
+        function updateTodayInfo() {
+            const today = new Date();
+            document.getElementById('todayDate').textContent = today.toLocaleDateString('pt-BR', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long'
+            });
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Fechar modal ao clicar fora
+        document.getElementById('eventModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEventModal();
+            }
+        });
+
+        // Inicialização
+        updateTodayInfo();
+        generateCalendar();
+        generateMiniCalendar();
+    </script>
+</body>
+</html>

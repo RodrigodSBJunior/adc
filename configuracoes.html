@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - ADC Psicologia</title>
+    <link rel="stylesheet" href="configuracoes.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="perfil.html"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="configuracoes.html"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <h1>Configurações</h1>
+        
+        <!-- Configurações de Conta -->
+        <div class="config-sections">
+            <div class="section-card">
+                <h3>Segurança da Conta</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Alterar Senha</h4>
+                        <p>Mantenha sua conta segura alterando sua senha regularmente</p>
+                    </div>
+                    <button class="btn-config">Alterar</button>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Autenticação em Duas Etapas</h4>
+                        <p>Adicione uma camada extra de segurança à sua conta</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Sessões Ativas</h4>
+                        <p>Gerencie dispositivos conectados à sua conta</p>
+                    </div>
+                    <button class="btn-config">Gerenciar</button>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Notificações</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Notificações por Email</h4>
+                        <p>Receba lembretes de consultas por email</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Notificações Push</h4>
+                        <p>Receba notificações no navegador</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Lembrete de Consultas</h4>
+                        <p>Tempo de antecedência para lembretes</p>
+                    </div>
+                    <select class="config-select">
+                        <option value="15">15 minutos</option>
+                        <option value="30" selected>30 minutos</option>
+                        <option value="60">1 hora</option>
+                        <option value="120">2 horas</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Agenda e Horários</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Horário de Funcionamento</h4>
+                        <p>Configure seus horários de atendimento</p>
+                    </div>
+                    <button class="btn-config">Configurar</button>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Duração Padrão das Consultas</h4>
+                        <p>Tempo padrão para novas consultas</p>
+                    </div>
+                    <select class="config-select">
+                        <option value="45">45 minutos</option>
+                        <option value="50" selected>50 minutos</option>
+                        <option value="60">60 minutos</option>
+                    </select>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Intervalo Entre Consultas</h4>
+                        <p>Tempo de intervalo entre atendimentos</p>
+                    </div>
+                    <select class="config-select">
+                        <option value="5">5 minutos</option>
+                        <option value="10" selected>10 minutos</option>
+                        <option value="15">15 minutos</option>
+                        <option value="30">30 minutos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Privacidade e Dados</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Backup de Dados</h4>
+                        <p>Faça backup dos seus dados regularmente</p>
+                    </div>
+                    <button class="btn-config">Fazer Backup</button>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Exportar Dados</h4>
+                        <p>Exporte seus dados em formato PDF ou Excel</p>
+                    </div>
+                    <button class="btn-config">Exportar</button>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Retenção de Dados</h4>
+                        <p>Tempo de armazenamento dos dados dos pacientes</p>
+                    </div>
+                    <select class="config-select">
+                        <option value="1">1 ano</option>
+                        <option value="2">2 anos</option>
+                        <option value="5" selected>5 anos</option>
+                        <option value="10">10 anos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>Aparência</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Tema</h4>
+                        <p>Escolha entre tema claro ou escuro</p>
+                    </div>
+                    <select class="config-select">
+                        <option value="claro" selected>Claro</option>
+                        <option value="escuro">Escuro</option>
+                        <option value="auto">Automático</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="section-card danger-zone">
+                <h3>Zona de Perigo</h3>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Desativar Conta</h4>
+                        <p>Desative temporariamente sua conta</p>
+                    </div>
+                    <button class="btn-danger">Desativar</button>
+                </div>
+                <div class="config-item">
+                    <div class="config-info">
+                        <h4>Excluir Conta</h4>
+                        <p>Exclua permanentemente sua conta e todos os dados</p>
+                    </div>
+                    <button class="btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões de ação -->
+        <div class="acoes-config">
+            <button class="btn-salvar">Salvar Configurações</button>
+            <button class="btn-restaurar">Restaurar Padrões</button>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>

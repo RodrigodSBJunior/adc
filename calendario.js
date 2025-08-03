@@ -230,8 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const botaoAgendar = document.getElementById('botao-agendar');
                 botaoAgendar.disabled = false;
                 botaoAgendar.onclick = function() {
-                    alert(`Consulta agendada com sucesso!\nData: ${dataSelecionada.textContent}\nHorário: ${horario}`);
-                    window.location.href = 'myconsultas.html'; // Redirecionar para a página de consultas
+                    // Esconder calendário e mostrar mensagem de sucesso
+                    const calendarioSection = document.getElementById('calendario-section');
+                    const mensagemSucesso = document.getElementById('mensagem-sucesso');
+                    
+                    if (calendarioSection && mensagemSucesso) {
+                        calendarioSection.style.display = 'none';
+                        mensagemSucesso.style.display = 'block';
+                    }
                 };
             });
             

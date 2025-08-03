@@ -1,11 +1,670 @@
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    width: 100%;
-    font-family: Arial;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #f0f7fa 0%, #d8e9f3 50%, #c5dbe9 100%);
 }
 
+/* Estilos do Menu - Copiados do areaprofissional.css */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    width: auto;
+    min-width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0066cc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    padding: 0 15px;
+    color: white;
+    user-select: none;
+}
+
+.hamburger-menu:hover {
+    background-color: #0055aa;
+    transform: scale(1.05);
+}
+
+.menu-text {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 99;
+    overflow-y: auto;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.menu-header {
+    background: linear-gradient(135deg, #0066cc 0%, #0055aa 100%);
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu a:hover {
+    color: #0066cc;
+}
+
+.nav-menu i {
+    margin-right: 10px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 98;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logo-img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilos principais */
+.main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.main-content h1 {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Calendário */
+.calendario-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calendario-section h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mes-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.mes-selector button {
+    background: #0066cc;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.mes-selector button:hover {
+    background: #0055aa;
+}
+
+.mes-selector span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 20px;
+    min-width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.calendario .dia-semana {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 0;
+    color: #666;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendario .dia {
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #eee;
+    margin: 1px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.calendario .dia:hover {
+    background-color: #e0f7fa;
+}
+
+.calendario .dia.selecionado {
+    background-color: #0066cc;
+    color: white;
+}
+
+.calendario .dia.outro-mes {
+    color: #ccc;
+}
+
+.calendario .dia.hoje {
+    border: 2px solid #0066cc;
+}
+
+.calendario .dia.has-consulta {
+    background: #fff3cd;
+    border-color: #ffc107;
+}
+
+.calendario .dia.has-consulta::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 4px;
+    height: 4px;
+    background: #ffc107;
+    border-radius: 50%;
+}
+
+/* Área de consultas */
+.consultas-section {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.consultas-header h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filtro-select, .filtro-input {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+}
+
+.filtro-select {
+    min-width: 150px;
+}
+
+.filtro-input {
+    flex: 1;
+    max-width: 200px;
+}
+
+.filtro-select:focus, .filtro-input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.consultas-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.no-selection {
+    text-align: center;
+    color: #6c757d;
+    padding: 30px 15px;
+}
+
+.no-selection i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #dee2e6;
+}
+
+.no-selection p {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.consulta-card {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 3px solid #0066cc;
+    transition: all 0.2s;
+    border: 1px solid #e9ecef;
+}
+
+.consulta-card:hover {
+    transform: translateX(5px);
+}
+
+.consulta-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.paciente-foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0066cc;
+}
+
+.paciente-info h4 {
+    margin: 0;
+    color: #212529;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.consulta-tipo {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tipo-online {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tipo-presencial {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.consulta-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.consulta-horario {
+    font-weight: 600;
+    color: #0066cc;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-prontuario {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.btn-prontuario:hover {
+    background: #0055aa;
+}
+
+/* Estilos para os cards de pacientes */
+.pacientes-cards {
+    margin-top: 20px;
+}
+
+.pacientes-cards h3 {
+    color: #0066cc;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-paciente {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #0066cc;
+    transition: all 0.3s ease;
+}
+
+.card-paciente:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.tipo-consulta {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tipo-consulta.online {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tipo-consulta.presencial {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+.card-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.card-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.card-buttons {
+    grid-column: span 2;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-prontuario, .btn-ver-mais {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-prontuario {
+    background: #0066cc;
+    color: white;
+}
+
+.btn-prontuario:hover {
+    background: #0055aa;
+    transform: translateY(-1px);
+}
+
+.btn-ver-mais {
+    background: #28a745;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-ver-mais:hover {
+    background: #218838;
+    transform: translateY(-1px);
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Footer */
+.rodape {
+    background-color: #222;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.footer-logo img {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.footer-info {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #0066cc;
+    transform: translateY(-3px);
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

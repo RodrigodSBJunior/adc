@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Profissional</title>
-    <link rel="stylesheet" href="areaprofissional.css">
+    <title>Minhas Consultas - ADC Psicologia</title>
+    <link rel="stylesheet" href="consultasprofi.css">
     <link rel="stylesheet" href="icons.css">
 </head>
 <body>
@@ -23,10 +23,10 @@
         <div class="menu-header">Menu do Profissional</div>
         <ul>
             <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
-            <li><a href="#agenda"><i class="icon-calendar"></i>Minha Agenda</a></li>
-            <li><a href="#pacientes"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
             <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
-            <li><a href="#avaliacoes"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
             <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
             <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
             <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
@@ -38,5 +38,170 @@
 
     <!-- Logo ADC no topo -->
     <div class="logo-container">
-        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
     </div>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <h1>Minhas Consultas</h1>
+        
+        <div class="content-wrapper">
+            <!-- Área de consultas -->
+            <div class="consultas-section">
+                <div class="consultas-header">
+                    <h2>Agenda do Dia</h2>
+                    <div class="filtros">
+                        <input type="date" id="filtroDia" class="filtro-input" value="2025-06-15">
+                        <select id="filtroTipo" class="filtro-select">
+                            <option value="todos">Todos os tipos</option>
+                            <option value="online">Online</option>
+                            <option value="presencial">Presencial</option>
+                        </select>
+                        <input type="text" id="filtroNome" class="filtro-input" placeholder="Buscar por nome...">
+                    </div>
+                </div>
+                
+                <div id="consultasList" class="consultas-list">
+                    <div class="pacientes-cards">
+                        <h3>Pacientes do Dia - 15/06/2025</h3>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>João Silva</h4>
+                                <span class="tipo-consulta online">Online</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 15/06/2025</p>
+                                <p><strong>Horário:</strong> 09:00 - 10:00</p>
+                                <p><strong>Prontuário:</strong> P001</p>
+                                <div class="card-buttons">
+                                 <a href="prontuario-completo.html">   <button class="btn-prontuario">Ver Prontuário</button></a>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Maria Santos</h4>
+                                <span class="tipo-consulta presencial">Presencial</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 15/06/2025</p>
+                                <p><strong>Horário:</strong> 10:30 - 11:30</p>
+                                <p><strong>Prontuário:</strong> P002</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Ana Paula</h4>
+                                <span class="tipo-consulta online">Online</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 15/06/2025</p>
+                                <p><strong>Horário:</strong> 14:00 - 15:00</p>
+                                <p><strong>Prontuário:</strong> P003</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Carlos Oliveira</h4>
+                                <span class="tipo-consulta presencial">Presencial</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 15/06/2025</p>
+                                <p><strong>Horário:</strong> 15:30 - 16:30</p>
+                                <p><strong>Prontuário:</strong> P004</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Fernanda Costa</h4>
+                                <span class="tipo-consulta online">Online</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 15/06/2025</p>
+                                <p><strong>Horário:</strong> 17:00 - 18:00</p>
+                                <p><strong>Prontuário:</strong> P005</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Pedro Almeida</h4>
+                                <span class="tipo-consulta presencial">Presencial</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 16/06/2025</p>
+                                <p><strong>Horário:</strong> 09:00 - 10:00</p>
+                                <p><strong>Prontuário:</strong> P006</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-paciente">
+                            <div class="card-header">
+                                <h4>Lucia Martins</h4>
+                                <span class="tipo-consulta online">Online</span>
+                            </div>
+                            <div class="card-info">
+                                <p><strong>Data:</strong> 17/06/2025</p>
+                                <p><strong>Horário:</strong> 14:00 - 15:00</p>
+                                <p><strong>Prontuário:</strong> P007</p>
+                                <div class="card-buttons">
+                                    <button class="btn-prontuario">Ver Prontuário</button>
+                                    <a href="vermais.html" class="btn-ver-mais">Ver Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="consultasprofi.js"></script>
+    <script src="filtros.js"></script>
+</body>
+</html>

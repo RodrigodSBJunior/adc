@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Consultas - ADC Psicologia</title>
+    <link rel="stylesheet" href="detalhes-consulta.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <main class="main-content">
+        <div class="voltar-btn">
+            <a href="vermais.html" class="btn-voltar">← Voltar aos Detalhes</a>
+        </div>
+
+        <h1>Histórico de Consultas - João Silva</h1>
+        
+        <div class="historico-content">
+            <!-- Filtros -->
+            <div class="filtros-historico">
+                <input type="date" id="dataInicio" class="filtro-input" placeholder="Data início">
+                <input type="date" id="dataFim" class="filtro-input" placeholder="Data fim">
+                <select id="statusConsulta" class="filtro-select">
+                    <option value="todas">Todas</option>
+                    <option value="realizada">Realizada</option>
+                    <option value="falta">Falta</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
+            </div>
+
+            <!-- Lista de Consultas -->
+            <div class="consultas-historico">
+                <div class="consulta-historico-item">
+                    <div class="consulta-header-hist">
+                        <div class="consulta-numero">
+                            <span class="numero-badge">#001</span>
+                            <h4>Sessão Inicial - Estabelecimento de Vínculo</h4>
+                        </div>
+                        <span class="status-realizada">Realizada</span>
+                    </div>
+                    <div class="consulta-info-hist">
+                        <div class="info-grid-hist">
+                            <div class="info-item-hist">
+                                <i class="icon-calendar"></i>
+                                <div>
+                                    <strong>Data:</strong>
+                                    <span>15/05/2025</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <span>09:00 - 10:00</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-monitor"></i>
+                                <div>
+                                    <strong>Modalidade:</strong>
+                                    <span class="tipo-badge online">Online</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-time"></i>
+                                <div>
+                                    <strong>Duração:</strong>
+                                    <span>60 minutos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consulta-observacoes">
+                        <h5>Observações Clínicas:</h5>
+                        <p>Cliente demonstrou abertura para o processo terapêutico. Relatou dificuldades significativas para lidar com pressão no ambiente de trabalho após recente promoção. Estabelecimento de vínculo terapêutico inicial bem-sucedido. Definidos objetivos preliminares para as próximas sessões.</p>
+                    </div>
+                </div>
+
+                <div class="consulta-historico-item">
+                    <div class="consulta-header-hist">
+                        <div class="consulta-numero">
+                            <span class="numero-badge">#002</span>
+                            <h4>Desenvolvimento de Estratégias de Enfrentamento</h4>
+                        </div>
+                        <span class="status-realizada">Realizada</span>
+                    </div>
+                    <div class="consulta-info-hist">
+                        <div class="info-grid-hist">
+                            <div class="info-item-hist">
+                                <i class="icon-calendar"></i>
+                                <div>
+                                    <strong>Data:</strong>
+                                    <span>22/05/2025</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <span>09:00 - 10:00</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-monitor"></i>
+                                <div>
+                                    <strong>Modalidade:</strong>
+                                    <span class="tipo-badge online">Online</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-time"></i>
+                                <div>
+                                    <strong>Duração:</strong>
+                                    <span>60 minutos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consulta-observacoes">
+                        <h5>Observações Clínicas:</h5>
+                        <p>Cliente relatou melhora significativa na qualidade do sono após implementação das técnicas de respiração e relaxamento ensinadas na sessão anterior. Demonstrou maior engajamento no processo terapêutico. Introduzidas estratégias cognitivas para reestruturação de pensamentos disfuncionais.</p>
+                    </div>
+                </div>
+
+                <div class="consulta-historico-item">
+                    <div class="consulta-header-hist">
+                        <div class="consulta-numero">
+                            <span class="numero-badge">#003</span>
+                            <h4>Consolidação de Aprendizados e Autoconfiança</h4>
+                        </div>
+                        <span class="status-realizada">Realizada</span>
+                    </div>
+                    <div class="consulta-info-hist">
+                        <div class="info-grid-hist">
+                            <div class="info-item-hist">
+                                <i class="icon-calendar"></i>
+                                <div>
+                                    <strong>Data:</strong>
+                                    <span>29/05/2025</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-clock"></i>
+                                <div>
+                                    <strong>Horário:</strong>
+                                    <span>09:00 - 10:00</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-monitor"></i>
+                                <div>
+                                    <strong>Modalidade:</strong>
+                                    <span class="tipo-badge presencial">Presencial</span>
+                                </div>
+                            </div>
+                            <div class="info-item-hist">
+                                <i class="icon-time"></i>
+                                <div>
+                                    <strong>Duração:</strong>
+                                    <span>60 minutos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consulta-observacoes">
+                        <h5>Observações Clínicas:</h5>
+                        <p>Progresso notável na gestão do estresse e ansiedade. Cliente demonstrou maior autoconfiança e está aplicando efetivamente as técnicas aprendidas em situações do cotidiano. Observa-se melhora na postura corporal e expressão facial. Continuidade do plano terapêutico com foco em manutenção dos ganhos obtidos.</p>
+                    </div>
+                </div>
+
+                <div class="consulta-historico-item">
+                    <div class="consulta-header-hist">
+                        <h4>Consulta #004</h4>
+                        <span class="status-falta">Falta</span>
+                    </div>
+                    <div class="consulta-info-hist">
+                        <p><strong>Data:</strong> 05/06/2025</p>
+                        <p><strong>Horário:</strong> 09:00 - 10:00</p>
+                        <p><strong>Tipo:</strong> Online</p>
+                        <p><strong>Duração:</strong> -</p>
+                    </div>
+                    <div class="consulta-observacoes">
+                        <strong>Observações:</strong> Paciente não compareceu. Reagendado para próxima semana.
+                    </div>
+                </div>
+
+                <div class="consulta-historico-item">
+                    <div class="consulta-header-hist">
+                        <h4>Consulta #005</h4>
+                        <span class="status-agendada">Agendada</span>
+                    </div>
+                    <div class="consulta-info-hist">
+                        <p><strong>Data:</strong> 15/06/2025</p>
+                        <p><strong>Horário:</strong> 09:00 - 10:00</p>
+                        <p><strong>Tipo:</strong> Online</p>
+                        <p><strong>Duração:</strong> -</p>
+                    </div>
+                    <div class="consulta-observacoes">
+                        <strong>Observações:</strong> Próxima consulta agendada.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumo Estatístico -->
+            <div class="resumo-estatistico">
+                <h3>Resumo Estatístico</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <strong>Total de Consultas:</strong> 5
+                    </div>
+                    <div class="stat-item">
+                        <strong>Consultas Realizadas:</strong> 3
+                    </div>
+                    <div class="stat-item">
+                        <strong>Faltas:</strong> 1
+                    </div>
+                    <div class="stat-item">
+                        <strong>Taxa de Presença:</strong> 75%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>

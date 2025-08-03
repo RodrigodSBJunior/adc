@@ -1,240 +1,139 @@
-img{
-   width: 80px;
-   height: auto;
-   display: block;
-   margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-header {
+    margin-bottom: 30px;
+}
+
+.logo-header img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-header img:hover {
+    transform: scale(1.05);
 }
 
 .cadastro-container {
-   max-width: 800px;
-   margin: 60px auto 0 auto;
-   background: #fff;
-   border-radius: 16px;
-   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-   padding: 40px 30px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
 }
 
-h1{
-   text-align: center;
-   margin-bottom: 80px;
-   position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
-   top: 150px;
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 300;
 }
 
-.linha-vertical{
-   width: 2px;
-   height: 100vh;
-   background-color: black;
-   position: fixed;
-   left: 50%;
-   top: 0;
-   transform: translateX(-50%);
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-a{
-   display: block;
-   text-align: center;
+.form-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.marcacao p:nth-child(3){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 200px;
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
-.marcacao input:nth-child(4){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 230px;
+label {
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
 }
 
-.marcacao p:nth-child(7){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 300px;
+.required {
+    color: #e74c3c;
+    margin-left: 3px;
 }
 
-.marcacao input:nth-child(8){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 340px;
+input, select {
+    padding: 10px 14px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fff;
 }
 
-.marcacao p:nth-child(1),
-.marcacao input:nth-child(2),
-.marcacao p:nth-child(5),
-.marcacao input:nth-child(6){
-   position: absolute;
-   left: calc(50% - 280px);
+input:focus, select:focus {
+    outline: none;
+    border-color: rgb(31, 31, 177);
+    box-shadow: 0 0 0 3px rgba(31, 31, 177, 0.1);
 }
 
-.marcacao p:nth-child(1){
-   top: 200px;
+select {
+    cursor: pointer;
 }
 
-.marcacao input:nth-child(2){
-   top: 230px;
-}
-
-.marcacao p:nth-child(5){
-   top: 300px;
-}
-
-.marcacao input:nth-child(6){
-   top: 340px;
-}
-
-input{
-   width: 250px;
-   height: 35px;
-   border: solid 1 px black;
-   border-radius: 50px;
-}
-
-.marcacao p:nth-child(9),
-.marcacao input[type="date"] {
-   position: absolute;
-   left: calc(50% - 280px);
-   top: 400px;
-}
-
-.sexo-label {
-    position: absolute;
-    left: calc(50% - 20px);
-    top: 400px;
-}
-
-.marcacao select[name="sexo"] {
-   position: absolute;
-   left: calc(50% - 20px);
-   top: 430px;
-   width: 180px;
-   height: 35px;
-   border-radius: 50px;
-   border: 1px solid black;
-}
-
-.tel-label {
-   position: absolute;
-   left: calc(50% + 180px);
-   top: 400px;
-}
-
-.marcacao .telefone {
-   position: absolute;
-   left: calc(50% + 180px);
-   top: 430px;
-   width: 180px;
-   height: 35px;
-   border-radius: 50px;
-   border: 1px solid black;
-}
-
-/* Senha e Confirmar Senha - abaixo */
-.senha-label {
-   position: absolute;
-   left: calc(50% - 280px);
-   top: 500px;
-}
-
-.senha {
-   position: absolute;
-   left: calc(50% - 280px);
-   top: 530px;
-   width: 250px;
-   height: 35px;
-   border-radius: 50px;
-   border: 1px solid black;
-}
-
-.senha2-label {
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 500px;
-}
-
-.marcacao input[name="confirmar-senha"] {
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 530px;
-   width: 250px;
-   height: 35px;
-   border-radius: 50px;
-   border: 1px solid black;
-}
-
-.marcacao input:nth-child(10){
-   position: absolute;
-   left: calc(50% - 125px);
-   top: 430px;
-   width: 200px;
-}
-
-.marcacao p:nth-child(13){
-   position: absolute;
-   left: calc(50% - 280px);
-   top: 480px;
-}
-
-.marcacao input:nth-child(14){
-   position: absolute;
-   left: calc(50% - 280px);
-   top: 510px;
-}
-
-.marcacao p:nth-child(15){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 480px;
-}
-
-.marcacao input:nth-child(16){
-   position: absolute;
-   left: calc(50% + 20px);
-   top: 510px;
-}
-
-.marcacao p:nth-child(11){
-   position: absolute;
-   left: calc(50% - 125px);
-   top: 470px;
-}
-
-.marcacao select:nth-child(12){
-   position: absolute;
-   left: calc(50% - 125px);
-   top: 500px;
-   width: 250px;
-   height: 35px;
-   border: solid 1px black;
-   border-radius: 50px;
-}
 .botao-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 .botao-cadastrar {
-    background-color: #0066cc;
+    background-color: rgb(31, 31, 177);
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid rgb(31, 31, 177);
+    border-radius: 8px;
     padding: 12px 40px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .botao-cadastrar:hover {
-    background-color: #0055aa;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    color: rgb(31, 31, 177);
+    border-color: rgb(31, 31, 177);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .cadastro-container {
+        padding: 25px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
 }

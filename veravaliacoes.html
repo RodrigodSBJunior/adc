@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Avaliações - ADC Psicologia</title>
+    <link rel="stylesheet" href="veravaliacoes.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <h1>Minhas Avaliações</h1>
+        
+        <!-- Resumo das avaliações -->
+        <div class="avaliacoes-resumo">
+            <div class="resumo-card">
+                <div class="resumo-icon">⭐</div>
+                <div class="resumo-info">
+                    <span class="resumo-numero">4.8</span>
+                    <span class="resumo-label">Nota Média</span>
+                </div>
+            </div>
+            <div class="resumo-card">
+                <div class="resumo-icon">📊</div>
+                <div class="resumo-info">
+                    <span class="resumo-numero">47</span>
+                    <span class="resumo-label">Total de Avaliações</span>
+                </div>
+            </div>
+            <div class="resumo-card">
+                <div class="resumo-icon">👍</div>
+                <div class="resumo-info">
+                    <span class="resumo-numero">94%</span>
+                    <span class="resumo-label">Recomendações</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros-section">
+            <select class="filtro-select">
+                <option value="todas">Todas as avaliações</option>
+                <option value="5">5 estrelas</option>
+                <option value="4">4 estrelas</option>
+                <option value="3">3 estrelas</option>
+                <option value="2">2 estrelas</option>
+                <option value="1">1 estrela</option>
+            </select>
+            <select class="filtro-select">
+                <option value="recentes">Mais recentes</option>
+                <option value="antigas">Mais antigas</option>
+                <option value="melhor">Melhor avaliação</option>
+                <option value="pior">Pior avaliação</option>
+            </select>
+        </div>
+
+        <!-- Lista de avaliações -->
+        <div class="avaliacoes-container">
+            <div class="avaliacao-card">
+                <div class="avaliacao-header">
+                    <div class="paciente-info">
+                        <img src="https://via.placeholder.com/50x50/0066cc/ffffff?text=JS" alt="João Silva" class="paciente-foto">
+                        <div>
+                            <h3>João Silva</h3>
+                            <span class="data-avaliacao">15/06/2025</span>
+                        </div>
+                    </div>
+                    <div class="estrelas">
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                    </div>
+                </div>
+                <div class="avaliacao-conteudo">
+                    <p>"Excelente profissional! Muito atenciosa e me ajudou muito durante o tratamento. O consultório é muito acolhedor e bem localizado. Recomendo!"</p>
+                </div>
+                <div class="avaliacao-categorias">
+                    <span class="categoria-tag">Profissional: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Consultório: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Atendimento: ⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+
+            <div class="avaliacao-card">
+                <div class="avaliacao-header">
+                    <div class="paciente-info">
+                        <img src="https://via.placeholder.com/50x50/0066cc/ffffff?text=MS" alt="Maria Santos" class="paciente-foto">
+                        <div>
+                            <h3>Maria Santos</h3>
+                            <span class="data-avaliacao">12/06/2025</span>
+                        </div>
+                    </div>
+                    <div class="estrelas">
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela">★</span>
+                    </div>
+                </div>
+                <div class="avaliacao-conteudo">
+                    <p>"Ótima psicóloga, muito profissional e empática. Me senti muito à vontade durante as sessões. O ambiente é tranquilo e favorece o tratamento."</p>
+                </div>
+                <div class="avaliacao-categorias">
+                    <span class="categoria-tag">Profissional: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Consultório: ⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Atendimento: ⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+
+            <div class="avaliacao-card">
+                <div class="avaliacao-header">
+                    <div class="paciente-info">
+                        <img src="https://via.placeholder.com/50x50/0066cc/ffffff?text=AP" alt="Ana Paula" class="paciente-foto">
+                        <div>
+                            <h3>Ana Paula</h3>
+                            <span class="data-avaliacao">08/06/2025</span>
+                        </div>
+                    </div>
+                    <div class="estrelas">
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                    </div>
+                </div>
+                <div class="avaliacao-conteudo">
+                    <p>"Profissional excepcional! Conseguiu me ajudar em momentos muito difíceis. Técnicas eficazes e abordagem humanizada. Consultório impecável."</p>
+                </div>
+                <div class="avaliacao-categorias">
+                    <span class="categoria-tag">Profissional: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Consultório: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Atendimento: ⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+
+            <div class="avaliacao-card">
+                <div class="avaliacao-header">
+                    <div class="paciente-info">
+                        <img src="https://via.placeholder.com/50x50/0066cc/ffffff?text=CO" alt="Carlos Oliveira" class="paciente-foto">
+                        <div>
+                            <h3>Carlos Oliveira</h3>
+                            <span class="data-avaliacao">05/06/2025</span>
+                        </div>
+                    </div>
+                    <div class="estrelas">
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela">★</span>
+                    </div>
+                </div>
+                <div class="avaliacao-conteudo">
+                    <p>"Muito boa profissional, me ajudou bastante. Consultório bem organizado e confortável. Única observação é sobre o estacionamento que é um pouco limitado."</p>
+                </div>
+                <div class="avaliacao-categorias">
+                    <span class="categoria-tag">Profissional: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Consultório: ⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Atendimento: ⭐⭐⭐⭐</span>
+                </div>
+            </div>
+
+            <div class="avaliacao-card">
+                <div class="avaliacao-header">
+                    <div class="paciente-info">
+                        <img src="https://via.placeholder.com/50x50/0066cc/ffffff?text=FC" alt="Fernanda Costa" class="paciente-foto">
+                        <div>
+                            <h3>Fernanda Costa</h3>
+                            <span class="data-avaliacao">02/06/2025</span>
+                        </div>
+                    </div>
+                    <div class="estrelas">
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                        <span class="estrela ativa">★</span>
+                    </div>
+                </div>
+                <div class="avaliacao-conteudo">
+                    <p>"Dra. Mayra é uma excelente profissional! Muito dedicada e atenciosa. As sessões online funcionam perfeitamente e ela sempre está disponível quando preciso."</p>
+                </div>
+                <div class="avaliacao-categorias">
+                    <span class="categoria-tag">Profissional: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Consultório: ⭐⭐⭐⭐⭐</span>
+                    <span class="categoria-tag">Atendimento: ⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>

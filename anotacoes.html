@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações - ADC Psicologia</title>
+    <link rel="stylesheet" href="detalhes-consulta.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <main class="main-content">
+        <div class="voltar-btn">
+            <a href="vermais.html" class="btn-voltar">← Voltar aos Detalhes</a>
+        </div>
+
+        <h1>Anotações - João Silva</h1>
+        
+        <div class="anotacoes-content">
+            <!-- Nova Anotação -->
+            <div class="nova-anotacao-section">
+                <h3>Nova Anotação</h3>
+                <div class="anotacao-form">
+                    <select id="tipoAnotacao" class="filtro-select">
+                        <option value="sessao">Sessão Terapêutica</option>
+                        <option value="observacao">Observação Geral</option>
+                        <option value="evolucao">Evolução do Paciente</option>
+                        <option value="plano">Plano de Tratamento</option>
+                        <option value="emergencia">Situação de Emergência</option>
+                    </select>
+                    <input type="date" id="dataAnotacao" class="filtro-input" value="2025-06-15">
+                    <textarea id="conteudoAnotacao" class="anotacao-textarea" placeholder="Digite sua anotação aqui..." rows="6"></textarea>
+                    <div class="anotacao-buttons">
+                        <button class="btn-salvar-anotacao">Salvar Anotação</button>
+                        <button class="btn-limpar">Limpar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-anotacoes">
+                <h3>Filtrar Anotações</h3>
+                <div class="filtros-row">
+                    <select id="filtroTipo" class="filtro-select">
+                        <option value="todas">Todos os tipos</option>
+                        <option value="sessao">Sessão Terapêutica</option>
+                        <option value="observacao">Observação Geral</option>
+                        <option value="evolucao">Evolução do Paciente</option>
+                        <option value="plano">Plano de Tratamento</option>
+                        <option value="emergencia">Situação de Emergência</option>
+                    </select>
+                    <input type="date" id="filtroDataInicio" class="filtro-input">
+                    <input type="date" id="filtroDataFim" class="filtro-input">
+                    <input type="text" id="filtroBusca" class="filtro-input" placeholder="Buscar nas anotações...">
+                </div>
+            </div>
+
+            <!-- Lista de Anotações -->
+            <div class="anotacoes-lista">
+                <h3>Anotações Anteriores</h3>
+                
+                <div class="anotacao-item">
+                    <div class="anotacao-header">
+                        <div class="anotacao-info">
+                            <h4>Sessão Terapêutica</h4>
+                            <span class="anotacao-data">29/05/2025 - 10:15</span>
+                        </div>
+                        <div class="anotacao-actions">
+                            <a href="editar-anotacao.html" class="btn-editar">Editar</a>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="anotacao-conteudo">
+                        Paciente demonstrou significativa melhora nos sintomas de ansiedade. Relatou estar aplicando as técnicas de respiração aprendidas nas sessões anteriores. Observou-se maior confiança e autoestima. Continuidade do tratamento com foco em estratégias de enfrentamento para situações de estresse no trabalho.
+                    </div>
+                </div>
+
+                <div class="anotacao-item">
+                    <div class="anotacao-header">
+                        <div class="anotacao-info">
+                            <h4>Observação Geral</h4>
+                            <span class="anotacao-data">22/05/2025 - 09:45</span>
+                        </div>
+                        <div class="anotacao-actions">
+                            <a href="editar-anotacao.html" class="btn-editar">Editar</a>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="anotacao-conteudo">
+                        Paciente chegou mais pontual e demonstrou maior engajamento na sessão. Relatou melhora na qualidade do sono após implementação das técnicas de relaxamento. Importante manter o foco nas estratégias cognitivas para reestruturação de pensamentos negativos.
+                    </div>
+                </div>
+
+                <div class="anotacao-item">
+                    <div class="anotacao-header">
+                        <div class="anotacao-info">
+                            <h4>Plano de Tratamento</h4>
+                            <span class="anotacao-data">15/05/2025 - 11:00</span>
+                        </div>
+                        <div class="anotacao-actions">
+                            <a href="editar-anotacao.html" class="btn-editar">Editar</a>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="anotacao-conteudo">
+                        Estabelecido plano de tratamento inicial: 1) Psicoeducação sobre ansiedade; 2) Técnicas de respiração e relaxamento; 3) Reestruturação cognitiva; 4) Exposição gradual a situações de estresse. Frequência semanal por 12 sessões iniciais com reavaliação.
+                    </div>
+                </div>
+
+                <div class="anotacao-item">
+                    <div class="anotacao-header">
+                        <div class="anotacao-info">
+                            <h4>Sessão Terapêutica</h4>
+                            <span class="anotacao-data">15/05/2025 - 09:30</span>
+                        </div>
+                        <div class="anotacao-actions">
+                            <a href="editar-anotacao.html" class="btn-editar">Editar</a>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+                    </div>
+                    <div class="anotacao-conteudo">
+                        Primeira sessão com o paciente. Apresentou-se ansioso mas colaborativo. Queixa principal: ansiedade relacionada ao trabalho após promoção. Sintomas: insônia, irritabilidade, dificuldade de concentração. Histórico familiar de depressão (pai). Estabelecido rapport inicial satisfatório.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script>
+        document.querySelector('.btn-salvar-anotacao').addEventListener('click', function() {
+            const tipo = document.getElementById('tipoAnotacao').value;
+            const data = document.getElementById('dataAnotacao').value;
+            const conteudo = document.getElementById('conteudoAnotacao').value;
+            
+            if (conteudo.trim()) {
+                alert('Anotação salva com sucesso!');
+                document.getElementById('conteudoAnotacao').value = '';
+            } else {
+                alert('Digite o conteúdo da anotação.');
+            }
+        });
+
+        document.querySelector('.btn-limpar').addEventListener('click', function() {
+            document.getElementById('conteudoAnotacao').value = '';
+        });
+
+        document.querySelectorAll('.btn-excluir').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (confirm('Deseja excluir esta anotação?')) {
+                    this.closest('.anotacao-item').remove();
+                    alert('Anotação excluída com sucesso!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

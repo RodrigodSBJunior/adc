@@ -168,92 +168,8 @@ html, body {
     padding-bottom: 15px;
 }
 
-/* Header do perfil */
-.perfil-header {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #0066cc;
-}
-
-.foto-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.foto-perfil {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #0066cc;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-alterar-foto {
-    background: #0066cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-alterar-foto:hover {
-    background: #0055aa;
-    transform: translateY(-2px);
-}
-
-.info-basica h2 {
-    color: #0066cc;
-    font-size: 2.5rem;
-    margin: 0 0 10px 0;
-    font-weight: 700;
-}
-
-.especialidade {
-    font-size: 1.3rem;
-    color: #666;
-    margin: 5px 0;
-    font-weight: 500;
-}
-
-.crm {
-    font-size: 1.1rem;
-    color: #888;
-    margin: 5px 0;
-}
-
-.status-perfil {
-    margin-top: 15px;
-}
-
-.status {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.status.ativo {
-    background: #d4edda;
-    color: #155724;
-}
-
-/* Seções do perfil */
-.perfil-sections {
+/* Seções de configuração */
+.config-sections {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -267,6 +183,10 @@ html, body {
     border-left: 5px solid #0066cc;
 }
 
+.section-card.danger-zone {
+    border-left-color: #dc3545;
+}
+
 .section-card h3 {
     color: #0066cc;
     font-size: 1.8rem;
@@ -278,56 +198,142 @@ html, body {
     padding-bottom: 15px;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.danger-zone h3 {
+    color: #dc3545;
 }
 
-.form-group {
+/* Itens de configuração */
+.config-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.form-group.full-width {
-    grid-column: 1 / -1;
+.config-item:last-child {
+    border-bottom: none;
 }
 
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
+.config-info h4 {
     color: #333;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
 }
 
-.form-input, .form-textarea {
-    padding: 15px;
+.config-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Botões de configuração */
+.btn-config {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-config:hover {
+    background: #0055aa;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Selects de configuração */
+.config-select {
+    padding: 10px 15px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    transition: border-color 0.3s ease;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
 }
 
-.form-input:focus, .form-textarea:focus {
+.config-select:focus {
     outline: none;
     border-color: #0066cc;
     box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
-.form-input[readonly] {
-    background-color: #f8f9fa;
-    color: #666;
+/* Switch toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.6;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0066cc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 /* Botões de ação */
-.acoes-perfil {
+.acoes-config {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -335,7 +341,7 @@ html, body {
     flex-wrap: wrap;
 }
 
-.btn-salvar, .btn-cancelar {
+.btn-salvar, .btn-restaurar {
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -357,12 +363,12 @@ html, body {
     transform: translateY(-2px);
 }
 
-.btn-cancelar {
+.btn-restaurar {
     background: #6c757d;
     color: white;
 }
 
-.btn-cancelar:hover {
+.btn-restaurar:hover {
     background: #5a6268;
     transform: translateY(-2px);
 }
@@ -439,21 +445,22 @@ html, body {
         padding: 20px;
     }
     
-    .perfil-header {
+    .config-item {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+        gap: 15px;
     }
     
-    .form-grid {
-        grid-template-columns: 1fr;
+    .config-select {
+        width: 100%;
     }
     
-    .acoes-perfil {
+    .acoes-config {
         flex-direction: column;
         align-items: center;
     }
     
-    .btn-salvar, .btn-cancelar {
+    .btn-salvar, .btn-restaurar {
         width: 100%;
         max-width: 300px;
     }

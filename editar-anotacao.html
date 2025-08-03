@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Anotação - ADC Psicologia</title>
+    <link rel="stylesheet" href="detalhes-consulta.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="consultasprofi.html"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="veravaliacoes.html"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <main class="main-content">
+        <div class="voltar-btn">
+            <a href="anotacoes.html" class="btn-voltar">← Voltar às Anotações</a>
+        </div>
+
+        <h1>Editar Anotação - João Silva</h1>
+        
+        <div class="editar-anotacao-content">
+            <form class="anotacao-form">
+                <!-- Informações da Anotação -->
+                <div class="form-section">
+                    <h3>Informações da Anotação</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Tipo de Anotação:</label>
+                            <select class="form-input" id="tipoAnotacao">
+                                <option value="sessao" selected>Sessão Terapêutica</option>
+                                <option value="observacao">Observação Geral</option>
+                                <option value="evolucao">Evolução do Paciente</option>
+                                <option value="plano">Plano de Tratamento</option>
+                                <option value="emergencia">Situação de Emergência</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Data da Anotação:</label>
+                            <input type="date" value="2025-05-29" class="form-input" id="dataAnotacao">
+                        </div>
+                        <div class="form-group">
+                            <label>Horário:</label>
+                            <input type="time" value="10:15" class="form-input" id="horarioAnotacao">
+                        </div>
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <select class="form-input" id="statusAnotacao">
+                                <option value="ativa" selected>Ativa</option>
+                                <option value="arquivada">Arquivada</option>
+                                <option value="revisao">Em Revisão</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo da Anotação -->
+                <div class="form-section">
+                    <h3>Conteúdo da Anotação</h3>
+                    <div class="form-group">
+                        <label>Título (opcional):</label>
+                        <input type="text" value="Sessão com melhora significativa" class="form-input" id="tituloAnotacao">
+                    </div>
+                    <div class="form-group">
+                        <label>Conteúdo:</label>
+                        <textarea class="form-textarea-large" id="conteudoAnotacao" rows="10">Paciente demonstrou significativa melhora nos sintomas de ansiedade. Relatou estar aplicando as técnicas de respiração aprendidas nas sessões anteriores. Observou-se maior confiança e autoestima. Continuidade do tratamento com foco em estratégias de enfrentamento para situações de estresse no trabalho.</textarea>
+                    </div>
+                </div>
+
+                <!-- Tags e Categorização -->
+                <div class="form-section">
+                    <h3>Categorização</h3>
+                    <div class="form-group">
+                        <label>Tags (separadas por vírgula):</label>
+                        <input type="text" value="ansiedade, melhora, técnicas de respiração, autoestima" class="form-input" id="tagsAnotacao">
+                    </div>
+                    <div class="form-group">
+                        <label>Prioridade:</label>
+                        <select class="form-input" id="prioridadeAnotacao">
+                            <option value="baixa">Baixa</option>
+                            <option value="media" selected>Média</option>
+                            <option value="alta">Alta</option>
+                            <option value="urgente">Urgente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Visibilidade:</label>
+                        <select class="form-input" id="visibilidadeAnotacao">
+                            <option value="privada" selected>Privada</option>
+                            <option value="equipe">Equipe</option>
+                            <option value="supervisor">Supervisor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Anexos e Referências -->
+                <div class="form-section">
+                    <h3>Anexos e Referências</h3>
+                    <div class="form-group">
+                        <label>Anexar arquivo:</label>
+                        <input type="file" class="form-input" id="anexoAnotacao" accept=".pdf,.doc,.docx,.jpg,.png">
+                    </div>
+                    <div class="form-group">
+                        <label>Referências (consultas relacionadas):</label>
+                        <input type="text" value="Consulta #001, Consulta #002" class="form-input" id="referenciasAnotacao">
+                    </div>
+                </div>
+
+                <!-- Histórico de Alterações -->
+                <div class="form-section">
+                    <h3>Histórico de Alterações</h3>
+                    <div class="historico-alteracoes">
+                        <div class="alteracao-item">
+                            <strong>29/05/2025 10:15</strong> - Anotação criada por Dra. Mayra Santos
+                        </div>
+                        <div class="alteracao-item">
+                            <strong>29/05/2025 10:20</strong> - Conteúdo editado por Dra. Mayra Santos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn-salvar-anotacao">Salvar Alterações</button>
+                    <button type="button" class="btn-duplicar">Duplicar Anotação</button>
+                    <button type="button" class="btn-arquivar">Arquivar</button>
+                    <button type="button" class="btn-cancelar" onclick="window.history.back()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script>
+        document.querySelector('.btn-salvar-anotacao').addEventListener('click', function(e) {
+            e.preventDefault();
+            const agora = new Date();
+            const novaAlteracao = document.createElement('div');
+            novaAlteracao.className = 'alteracao-item';
+            novaAlteracao.innerHTML = `<strong>${agora.toLocaleString('pt-BR')}</strong> - Anotação editada por Dra. Mayra Santos`;
+            document.querySelector('.historico-alteracoes').appendChild(novaAlteracao);
+            
+            alert('Anotação atualizada com sucesso!');
+            setTimeout(() => {
+                window.location.href = 'anotacoes.html';
+            }, 1000);
+        });
+
+        document.querySelector('.btn-duplicar').addEventListener('click', function() {
+            if (confirm('Deseja duplicar esta anotação?')) {
+                alert('Anotação duplicada com sucesso!');
+            }
+        });
+
+        document.querySelector('.btn-arquivar').addEventListener('click', function() {
+            if (confirm('Deseja arquivar esta anotação?')) {
+                document.getElementById('statusAnotacao').value = 'arquivada';
+                alert('Anotação arquivada com sucesso!');
+            }
+        });
+    </script>
+</body>
+</html>

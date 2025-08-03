@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar Consulta</title>
+    <link rel="stylesheet" href="cancelar.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+  <!-- Botão voltar -->
+  <div class="voltar-btn" onclick="history.back()">
+    <i class="icon-arrow-left"></i>
+    <span>Voltar</span>
+  </div>
+
+  <!-- Logo ADC no topo -->
+  <div class="logo-container">
+    <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img" title="ADC Psicologia - Nitidez Melhorada">
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Cancelar Consulta</h1>
+    
+    <!-- Card único com todo o conteúdo -->
+    <div class="cancelamento-card">
+      <!-- Informações da profissional -->
+      <div class="profissional-destaque">
+        <h2>Dra. Mayra Santos</h2>
+        <p>Psicóloga - CRM: 385097-M</p>
+      </div>
+      
+      <!-- Informações da consulta -->
+      <div class="consulta-info-section">
+        <div class="info-row">
+          <i class="icon-calendar"></i>
+          <span>15 de Junho de 2025</span>
+        </div>
+        
+        <div class="info-row">
+          <i class="icon-clock"></i>
+          <span>14:00 - 15:00</span>
+        </div>
+        
+        <div class="info-row">
+          <i class="icon-video"></i>
+          <span>Consulta Online</span>
+        </div>
+      </div>
+      
+      <!-- Aviso sobre prazo de cancelamento -->
+      <div class="aviso-cancelamento">
+        <div class="aviso-header">
+          <i class="icon-info"></i>
+          <h3>Importante</h3>
+        </div>
+        <p>O cancelamento só pode ser realizado com no mínimo 1 hora de antecedência.</p>
+        <p>Caso ultrapasse esse prazo, entre em contato diretamente com a profissional pelo WhatsApp: <strong>(11) 99999-9999</strong></p>
+      </div>
+      
+      <!-- Formulário de cancelamento -->
+      <div class="cancelamento-form">
+        <h3>Motivo do Cancelamento (Opcional)</h3>
+        <p>Se desejar, informe o motivo do cancelamento. Esta informação será enviada para a profissional.</p>
+        
+        <textarea 
+          id="motivo-cancelamento" 
+          placeholder="Descreva o motivo do cancelamento da consulta... (opcional)"
+          rows="5"
+          maxlength="500"
+        ></textarea>
+        
+        <div class="form-actions">
+          <button type="button" class="btn-cancelar-consulta">Confirmar Cancelamento</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 ADC Psicologia</p>
+        <p>ITB Brasilio Flores (Belval)</p>
+        <p>Todos os direitos reservados</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

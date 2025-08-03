@@ -3,31 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entrar | ADC</title>
+    <title>Entrar | ADC Psicologia</title>
     <link rel="stylesheet" href="entrar.css" />
   </head>
   <body>
-    <a href="index.html">
-      <img src="ADC_nitidez_melhorada (4).jpeg" alt="" />
-    </a>
+    <header class="logo-header">
+      <a href="index.html">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia - Voltar ao início" />
+      </a>
+    </header>
 
-    <br /><br /><br />
+    <main class="login-container">
+      <h1>Entre em sua conta</h1>
 
-    <h1>Entre em sua conta</h1>
+      <form class="login-form" id="login-form">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-    <p>E-mail</p>
-    <input type="text" />
-    <br /><br />
-    <p>Senha</p>
-    <input type="text" />
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required />
+        </div>
 
-    <a href="#">Esqueceu a senha?</a>
+        <a href="#" class="forgot-password">Esqueceu a senha?</a>
 
-    <a href="areapaciente.html">
-      <button class="btn-entrar">Entrar</button>
-    </a>
-    <a href="cadastro.html">
-      <button class="criar-conta">Criar conta</button>
-    </a>
+        <div class="buttons-container">
+          <button type="submit" class="btn-entrar">Entrar</button>
+          <a href="cadastro.html">
+            <button type="button" class="criar-conta">Criar conta</button>
+          </a>
+        </div>
+      </form>
+    </main>
+
+    <script src="entrar.js"></script>
   </body>
 </html>

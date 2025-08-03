@@ -589,6 +589,55 @@ main p {
   background-color: #cccccc;
   cursor: not-allowed;
 }
+
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.icone-sucesso {
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.mensagem-sucesso h2 {
+  color: #0066cc;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.mensagem-sucesso p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn-voltar-inicio {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-voltar-inicio:hover {
+  background: #0055aa;
+  transform: translateY(-2px);
+}
 /* Estilos para o logo */
 .logo-container {
   width: 100%;
@@ -599,8 +648,9 @@ main p {
 }
 
 .logo-img {
-  max-width: 400px;
+  width: 50px;
   height: auto;
+  transition: transform 0.3s ease;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   filter: brightness(1.03) contrast(1.05);
@@ -634,8 +684,9 @@ main p {
 }
 
 .footer-logo img {
-  width: 100%;
+  width: 50px;
   height: auto;
+  transition: transform 0.3s ease;
   border-radius: 5px;
 }
 

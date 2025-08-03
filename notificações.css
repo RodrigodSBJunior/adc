@@ -30,7 +30,7 @@ main {
 }
 
 main h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 2rem;
   color: #0066cc;
   text-align: center;
@@ -73,7 +73,7 @@ main h1 {
 
 .menu-text {
   margin-left: 8px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@ main h1 {
 }
 
 .logo-img {
-  max-width: 400px;
+  width: 40px;
   height: auto;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -337,13 +337,14 @@ main h1 {
   font-weight: bold;
   margin-bottom: 5px;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .notificacao-mensagem {
   color: #666;
   margin-bottom: 10px;
   line-height: 1.4;
+  font-size: 1.1rem;
 }
 
 .notificacao-data {

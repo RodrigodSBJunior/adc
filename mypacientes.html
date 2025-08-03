@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pacientes - ADC Psicologia</title>
+    <link rel="stylesheet" href="areaprofissional.css">
+    <link rel="stylesheet" href="icons.css">
+    <style>
+        .patients-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .search-filter-section {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .search-box input {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 350px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: #2196F3;
+            outline: none;
+        }
+        
+        .filter-select select {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            min-width: 180px;
+        }
+        
+        .patients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 25px;
+        }
+        
+        .patient-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .patient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .patient-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .patient-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #f0f0f0;
+        }
+        
+        .patient-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .patient-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #757575;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            border: 3px solid #f0f0f0;
+        }
+        
+        .patient-info h3 {
+            margin: 0;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .patient-info p {
+            margin: 8px 0 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .patient-details {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .detail-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .detail-value {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .patient-status {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        
+        .status-ativo {
+            background: #e8f5e8;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .status-inativo {
+            background: #fff3e0;
+            color: #ef6c00;
+            border: 1px solid #ffcc02;
+        }
+        
+        .status-alta {
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #bbdefb;
+        }
+        
+        .patient-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .btn-prontuario {
+            flex: 1;
+            padding: 12px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .btn-prontuario:hover {
+            background: #1565c0;
+        }
+        
+        .btn-contatar {
+            padding: 12px 18px;
+            background: #25d366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        
+        .btn-contatar:hover {
+            background: #128c7e;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #424242;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #303030;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px;
+            color: #666;
+            font-size: 18px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hambúrguer -->
+    <div class="hamburger-menu" aria-label="Menu principal" role="button" tabindex="0">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="menu-text">Menu</span>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="nav-menu" aria-hidden="true">
+        <div class="menu-header">Menu do Profissional</div>
+        <ul>
+            <li><a href="areaprofissional.html"><i class="icon-home"></i>Início</a></li>
+            <li><a href="#agenda"><i class="icon-calendar"></i>Minha Agenda</a></li>
+            <li><a href="mypacientes.html"><i class="icon-users"></i>Meus Pacientes</a></li>
+            <li><a href="#consultas"><i class="icon-history"></i>Histórico de Consultas</a></li>
+            <li><a href="#avaliacoes"><i class="icon-star"></i>Avaliações</a></li>
+            <li><a href="#perfil"><i class="icon-user"></i>Meu Perfil</a></li>
+            <li><a href="#config"><i class="icon-cog"></i>Configurações</a></li>
+            <li><a href="index.html"><i class="icon-sign-out"></i>Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para fechar o menu ao clicar fora -->
+    <div class="overlay"></div>
+
+    <!-- Logo ADC no topo -->
+    <div class="logo-container">
+        <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" class="logo-img">
+    </div>
+
+    <main class="patients-container">
+        <a href="areaprofissional.html" class="back-button">
+            <i class="icon-arrow-left"></i> Voltar
+        </a>
+        
+        <h1 style="color: #333; margin-bottom: 30px; font-size: 28px;">Meus Pacientes</h1>
+        
+        <!-- Seção de busca e filtros -->
+        <div class="search-filter-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar paciente por nome...">
+            </div>
+            <div class="filter-select">
+                <select id="statusFilter">
+                    <option value="">Todos os status</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                    <option value="alta">Alta</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid de pacientes -->
+        <div class="patients-grid" id="patientsGrid">
+            <!-- Os pacientes serão carregados aqui via JavaScript -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            Nenhum paciente encontrado com os critérios de busca.
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="ADC_nitidez_melhorada (4).jpeg" alt="ADC Psicologia" width="100">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 ADC Psicologia</p>
+                <p>ITB Brasilio Flores (Belval)</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="icon-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script>
+        // Dados dos pacientes com fotos
+        const pacientes = [
+            {
+                id: 1,
+                nome: "Ana Silva",
+                idade: 28,
+                telefone: "(11) 99999-1111",
+                email: "ana.silva@email.com",
+                status: "ativo",
+                proximaConsulta: "15/01/2025",
+                totalSessoes: 12,
+                foto: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+            },
+            {
+                id: 2,
+                nome: "Carlos Santos",
+                idade: 35,
+                telefone: "(11) 99999-2222",
+                email: "carlos.santos@email.com",
+                status: "ativo",
+                proximaConsulta: "16/01/2025",
+                totalSessoes: 8,
+                foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+            },
+            {
+                id: 3,
+                nome: "Maria Oliveira",
+                idade: 42,
+                telefone: "(11) 99999-3333",
+                email: "maria.oliveira@email.com",
+                status: "inativo",
+                proximaConsulta: "-",
+                totalSessoes: 25,
+                foto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+            },
+            {
+                id: 4,
+                nome: "João Pereira",
+                idade: 31,
+                telefone: "(11) 99999-4444",
+                email: "joao.pereira@email.com",
+                status: "alta",
+                proximaConsulta: "-",
+                totalSessoes: 20,
+                foto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+            },
+            {
+                id: 5,
+                nome: "Fernanda Costa",
+                idade: 26,
+                telefone: "(11) 99999-5555",
+                email: "fernanda.costa@email.com",
+                status: "ativo",
+                proximaConsulta: "17/01/2025",
+                totalSessoes: 6,
+                foto: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+            },
+            {
+                id: 6,
+                nome: "Roberto Lima",
+                idade: 45,
+                telefone: "(11) 99999-6666",
+                email: "roberto.lima@email.com",
+                status: "ativo",
+                proximaConsulta: "18/01/2025",
+                totalSessoes: 15,
+                foto: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+            }
+        ];
+
+        function getInitials(nome) {
+            return nome.split(' ').map(n => n[0]).join('').toUpperCase();
+        }
+
+        function getStatusClass(status) {
+            return `status-${status}`;
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'ativo': 'Ativo',
+                'inativo': 'Inativo',
+                'alta': 'Alta'
+            };
+            return statusMap[status] || status;
+        }
+
+        function createPatientCard(paciente) {
+            const photoElement = paciente.foto 
+                ? `<div class="patient-photo"><img src="${paciente.foto}" alt="${paciente.nome}"></div>`
+                : `<div class="patient-avatar">${getInitials(paciente.nome)}</div>`;
+                
+            return `
+                <div class="patient-card" data-name="${paciente.nome.toLowerCase()}" data-status="${paciente.status}">
+                    <div class="patient-header">
+                        ${photoElement}
+                        <div class="patient-info">
+                            <h3>${paciente.nome}</h3>
+                            <p>${paciente.idade} anos</p>
+                            <span class="patient-status ${getStatusClass(paciente.status)}">${getStatusText(paciente.status)}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="patient-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Telefone:</span>
+                            <span class="detail-value">${paciente.telefone}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Total de sessões:</span>
+                            <span class="detail-value">${paciente.totalSessoes}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Próxima consulta:</span>
+                            <span class="detail-value">${paciente.proximaConsulta}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="patient-actions">
+                        <button class="btn-prontuario" onclick="abrirProntuario(${paciente.id})">
+                            Prontuário
+                        </button>
+                        <button class="btn-contatar" onclick="entrarContato('${paciente.telefone}')">
+                            <i class="icon-whatsapp"></i> Contatar
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderPatients(patientsToRender = pacientes) {
+            const grid = document.getElementById('patientsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (patientsToRender.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+            } else {
+                grid.innerHTML = patientsToRender.map(createPatientCard).join('');
+                noResults.style.display = 'none';
+            }
+        }
+
+        function filterPatients() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            const filtered = pacientes.filter(paciente => {
+                const matchesName = paciente.nome.toLowerCase().includes(searchTerm);
+                const matchesStatus = !statusFilter || paciente.status === statusFilter;
+                return matchesName && matchesStatus;
+            });
+            
+            renderPatients(filtered);
+        }
+
+        function abrirProntuario(pacienteId) {
+            window.location.href = `prontuario.html?id=${pacienteId}`;
+        }
+
+        function entrarContato(telefone) {
+            const whatsappUrl = `https://wa.me/55${telefone.replace(/\D/g, '')}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterPatients);
+        document.getElementById('statusFilter').addEventListener('change', filterPatients);
+
+        // Renderizar pacientes inicialmente
+        renderPatients();
+    </script>
+</body>
+</html>
